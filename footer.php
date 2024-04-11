@@ -9,7 +9,7 @@
             <br />
             ejemplo@ejemplo.com
         </div>
-        <a href="https://github.com/Dalemoliga10" class="col-6 py-3 d-inline text-white" style="text-decoration: none; target="_blank">
+        <a href="https://github.com/Dalemoliga10" class="col-6 py-3 d-inline text-white" style="text-decoration: none;" target="_blank">
             <div>
                 <i class="bi-github py-3"></i>
                 <br />
