@@ -9,11 +9,13 @@
             <br />
             ejemplo@ejemplo.com
         </div>
-        <div class="col-6 py-3 d-inline">
-            <i class="bi-github py-3"></i>
-            <br />
-            dalemoliga10
-        </div>
+        <a href="https://github.com/Dalemoliga10" class="col-6 py-3 d-inline text-white" style="text-decoration: none; target="_blank">
+            <div>
+                <i class="bi-github py-3"></i>
+                <br />
+                <span>dalemoliga10</span>
+            </div>
+        </a>
     </div>
 </footer>
     <!-- Bootstrap JavaScript Libraries -->
