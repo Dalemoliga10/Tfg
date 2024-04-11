@@ -11,14 +11,7 @@ include 'header.php'
 
 <body>
     <main>
-        <form action="listado.php" id="miniform" name="miniform" method="get">
-            <p>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-                <input type="submit" value="buscar">
-            </p>
 
-        </form>
 <?php
 
 // Incluir el archivo de conexión
