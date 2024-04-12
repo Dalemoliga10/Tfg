@@ -15,20 +15,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <header>
-    <div class="container-fluid d-flex align-items-center">
-        <div class="container">
-            <span>Bienvenido a gamedex</span>
-        </div>
-        <div class="container">
-            <img src="imagenes/logo gameDex.png">
-        </div>
-        <div class="container">
+    
+    <div class="container-fluid d-flex align-items-center" style="height: 100px;">
+        <!-- Hay que poner la imagen para que no moleste al form -->
+        <img src="imagenes/logo gameDex.png" style="width:10%;">
+        <div class="container" style="width: 100%;">
             <form action="listado.php" id="miniform" name="miniform" method="get">
-                <p>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Buscar">
-                    <button><input type="submit" value="buscar" style="width: 100%;"></button> 
-                </p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Buscar" style="width: 60%;">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button> 
+                </div>
             </form>
         </div>
     </div>
