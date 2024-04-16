@@ -74,37 +74,32 @@
     }
 </style>
 <header>
-    <div class="container-fluid d-flex align-items-center" style="height: 100px;">
-        <!-- Hay que poner la imagen para que no moleste al form -->
-        <img src="imagenes/logo gameDex.png" style="width:10%;">
-        <div class="container" style="width: 100%;">
-            <form action="listado.php" id="miniform" name="miniform" method="get">
+    <form action="listado.php" id="miniform" name="miniform" method="get">
+        <div class="container-fluid d-flex align-items-center" style="height: 100px;">
+            <!-- Hay que poner la imagen para que no moleste al form -->
+            <img src="imagenes/logo gameDex.png" style="width:10%;">
+            <div class="container" style="width: 100%;">               
                 <div class="d-flex align-items-center justify-content-center">
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Buscar" style="width: 90%;">
                     <button type="submit" class="btn btn-primary" style="margin-left: 9px;"><i class="bi bi-search"></i></button>
                 </div>
-                
-            </form>
-        </div>
-    </div>
-    <div class="d-flex justify-content-center">
-        <div class='dropdown'>
-            <div class='title pointerCursor' style="text-align: center;">
-                Filtrar por categoria
             </div>
-            <div class='menu pointerCursor hide' style="text-align: center;">
-                <form action="listado.php" name="miniform" method="post">
-                    <?php while ($registro = mysqli_fetch_row($registros)) { ?>
-                    <label for="option<?php echo $contador ?>" style="margin-top: 5px;"><?php echo $registro[0]?></label>
-                    <input type="checkbox" id='option<?php echo $contador ?>' value="option<?php echo $contador ?> " style="margin-bottom:10px;"><br>
-                    <?php $contador = $contador + 1;} ?>
-                    <input type="submit" value="buscar por categoria">
-                </form>
-            </div>
-
         </div>
-    </div>
+        <div class="d-flex justify-content-center">
+            <div class='dropdown'>
+                <div class='title pointerCursor' style="text-align: center;">
+                    Filtrar por categoria
+                </div>
+                <div class='menu pointerCursor hide' style="text-align: center;">
+                        <?php while ($registro = mysqli_fetch_row($registros)) { ?>
+                        <label for="option<?php echo $contador ?>" style="margin-top: 5px;"><?php echo $registro[0]?></label>
+                        <input type="checkbox" id='option<?php echo $contador ?>' name="<?php echo $registro[0] ?>" style="margin-bottom:10px;"><br>
+                        <?php $contador = $contador + 1;} ?>
+                </div>
 
+            </div>
+        </div>
+    </form>
     <script>
         function toggleClass(elem, className) {
             if (elem.className.indexOf(className) !== -1) {

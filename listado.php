@@ -18,23 +18,43 @@
 
     $nombre = $_GET['nombre'];
 
-    // $selectedOptions = array();
+    $selectedOptions = array();
 
-    // // Iterar sobre los valores recibidos del formulario
-    // foreach ($_POST as $key => $value) {
-    //     // Verificar si el valor recibido corresponde a un checkbox seleccionado
-    //     if (substr($key, 0, 6) && $value === 'on') {
-    //         // Agregar la opción seleccionada al array
-    //         $selectedOptions[] = $key;
-    //     }
-    // }
+    // Iterar sobre los valores recibidos del formulario
+    foreach ($_GET as $key => $value) {
+        // Verificar si el valor recibido corresponde a un checkbox seleccionado
+        if (/*substr($key, 0, 6) && */$value === 'on') {
+            // Agregar la opción seleccionada al array
+            $selectedOptions[] = $key;
+        }
+    }
 
-    // var_dump($selectedOptions);
+    //Quitar los _ que salen en el array de los checkbox selecionados
+    for($i=0;$i<sizeof($selectedOptions);$i = $i + 1){
+        $selectedOptions[$i] = str_replace("_", " ", $selectedOptions[$i]);
+    }
 
+    echo sizeof($selectedOptions);
+    //Con esto filtro por nombre y etiquetas solo si ha puesto
+    if(sizeof($selectedOptions)>0){
+        $idEtiquetas = array();
+        for($i=0;$i<sizeof($selectedOptions);$i= $i +1){
+            $consultarEtiquetas = "SELECT id FROM etiquetas WHERE nombre LIKE '$selectedOptions[$i]%'";
+            $registros = mysqli_query($conexion, $consultarEtiquetas);
+
+            while ($registro = mysqli_fetch_row($registros)) { 
+                $idEtiquetas []= $registro[0];
+            }
+        }
+        var_dump($idEtiquetas);
+        $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' AND etiqueta1 = $idEtiquetas[0] ORDER BY nombre";
+    }else{
+        $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
+    }
     // Seleccionamos la Base de Datos
     mysqli_select_db($conexion, "bdfinal");
 
-    $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
+    
 
     $registros = mysqli_query($conexion, $consultar);
 
