@@ -47,10 +47,12 @@
             }
         }
         var_dump($idEtiquetas);
-        $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' AND etiqueta1 = $idEtiquetas[0] ORDER BY nombre";
-    }else{
-        $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
+        
     }
+    $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
+    //else{
+    //     $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
+    // }
     // Seleccionamos la Base de Datos
     mysqli_select_db($conexion, "bdfinal");
 
@@ -67,12 +69,47 @@
 
     <div class="container-fluid d-flex flex-column mb-4" style="width: 75%;">
         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
+            <!-- Ya he sacado los datos basados en el nombre, ahora filtro por etiqueta -->
+            <?php 
+                $tieneEtiquetas = True;
+                //Itero sobre todas las etiquetas, para comprobar si tiene la variable
+                for($i=0;$i<sizeof($idEtiquetas);$i= $i +1){
+
+                    //Comprueba primera etiqueta
+                    if($idEtiquetas[$i] == $registro[9]){
+                        //Si la ha encontrado, no hay que seguir revisando, 
+                        //que pase directamente a la siguiente etiqueta
+                        continue;
+                    }else{
+                        //Comprueba segunda etiqueta del juego
+                        if($idEtiquetas[$i] == $registro[10]){
+                            continue;
+                            
+                        }else{
+                            //Comprueba tercera etiqueta del juego
+                            if($idEtiquetas[$i] == $registro[11]){
+                                continue;
+                            }else{
+                                //En caso de no haber encontrado la etiqueta marcada en ninguna 
+                                //de las 3 etiquetas que tiene el juego, marca falso y sale del bucle
+                                $tieneEtiquetas = False;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+            if($tieneEtiquetas == True){
+            
+            ?>
+
+            
             <div class="card mb-1">
                 <div class="card-body d-flex flex-column flex-md-row">
                     
                     <div class="col-md-3 order-md-1">
                         <div class="d-flex justify-content-center align-items-center">
-                            <?php echo '<img width="80%" height="80%" src="imagenes/' . $registro[4] . '">'; ?>
+                            <?php echo '<img width="80%" height="80%" src="imagenes/' . $registro[5] . '">'; ?>
                         </div>
                     </div>
                     
@@ -88,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php }} ?>
     </div>
     <?php
     include "footer.php";
