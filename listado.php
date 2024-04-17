@@ -36,8 +36,8 @@
 
     echo sizeof($selectedOptions);
     //Con esto filtro por nombre y etiquetas solo si ha puesto
+    $idEtiquetas = array();
     if(sizeof($selectedOptions)>0){
-        $idEtiquetas = array();
         for($i=0;$i<sizeof($selectedOptions);$i= $i +1){
             $consultarEtiquetas = "SELECT id FROM etiquetas WHERE nombre LIKE '$selectedOptions[$i]%'";
             $registros = mysqli_query($conexion, $consultarEtiquetas);
@@ -71,8 +71,10 @@
         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
             <!-- Ya he sacado los datos basados en el nombre, ahora filtro por etiqueta -->
             <?php 
+            if(sizeof($idEtiquetas) != 0){
                 $tieneEtiquetas = True;
-                //Itero sobre todas las etiquetas, para comprobar si tiene la variable
+                //Itero sobre todas las etiquetas, para comprobar si las etiquetas 
+                //1,2,3 tienen esa
                 for($i=0;$i<sizeof($idEtiquetas);$i= $i +1){
 
                     //Comprueba primera etiqueta
@@ -103,7 +105,6 @@
             
             ?>
 
-            
             <div class="card mb-1">
                 <div class="card-body d-flex flex-column flex-md-row">
                     
@@ -125,6 +126,29 @@
                     </div>
                 </div>
             </div>
+        <?php }}else{ ?>
+            <div class="card mb-1">
+                <div class="card-body d-flex flex-column flex-md-row">
+                    
+                    <div class="col-md-3 order-md-1">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <?php echo '<img width="80%" height="80%" src="imagenes/' . $registro[5] . '">'; ?>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-9 order-md-2">
+                        <div class="d-flex justify-content-center">
+                            <div style="font-weight: bold;">
+                                <?php echo $registro[1]; ?>
+                            </div>
+                        </div>
+                        <div>
+                            <?php echo $registro[2]; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         <?php }} ?>
     </div>
     <?php
