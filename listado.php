@@ -69,6 +69,7 @@
 
     <div class="container-fluid d-flex flex-column mb-4" style="width: 75%;">
         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
+            
             <!-- Ya he sacado los datos basados en el nombre, ahora filtro por etiqueta -->
             <?php 
             if(sizeof($idEtiquetas) != 0){
@@ -102,6 +103,8 @@
                 }
                 
             if($tieneEtiquetas == True){
+            echo "<a href='detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
+            
             
             ?>
 
@@ -126,7 +129,7 @@
                     </div>
                 </div>
             </div>
-        <?php }}else{ ?>
+        <?php }echo "</a>"; }else{ echo "<a href='detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>"; ?>
             <div class="card mb-1">
                 <div class="card-body d-flex flex-column flex-md-row">
                     
@@ -149,7 +152,7 @@
                 </div>
             </div>
             
-        <?php }} ?>
+        <?php }echo "</a>";} ?>
     </div>
     <?php
     include "footer.php";
