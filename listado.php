@@ -124,9 +124,34 @@
                             </div>
                         </div>
                         <div>
-                            <?php echo $registro[2]; ?>
+                            <?php echo $registro[3]; ?>
                         </div>
                     </div>
+                </div>
+                <div class="container d-flex justify-content-center mb-2">
+                    <?php
+                        //Dentro de este contenedor voy a llamar al nombre de las etiquetas
+                        //Para que el usuario vea a que etiquetas pertenece
+                        
+                        $consultarEtiqueta = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
+                        }
+
+                        $consultarEtiqueta2 = "SELECT nombre FROM etiquetas WHERE id = '$registro[10]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta2);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
+                        }
+
+                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta3);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 15px;padding:5px;'>" . $nombre[0] . " </div>";
+                        }
+
+                    ?>
                 </div>
             </div>
         <?php }echo "</a>"; }else{ echo "<a href='detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>"; ?>
@@ -146,9 +171,33 @@
                             </div>
                         </div>
                         <div>
-                            <?php echo $registro[2]; ?>
+                            <?php echo $registro[3]; ?>
                         </div>
                     </div>
+                </div>
+                <div class="container d-flex justify-content-center mb-2">
+                    <?php
+                        //Dentro de este contenedor voy a llamar al nombre de las etiquetas
+                        //Para que el usuario vea a que etiquetas pertenece
+                        
+                        $consultarEtiqueta = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
+                        }
+
+                        $consultarEtiqueta2 = "SELECT nombre FROM etiquetas WHERE id = '$registro[10]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta2);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
+                        }
+
+                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta3);
+                        while ($nombre = mysqli_fetch_row($registroEtiqueta)){
+                            echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 15px;padding:5px;'>" . $nombre[0] . " </div>";
+                        }
+                    ?>
                 </div>
             </div>
             
