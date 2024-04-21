@@ -8,6 +8,7 @@ mysqli_select_db($conexion, "bdfinal");
 //almacena lo que hay en el array asociativo
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
+$descripcionCorta = $_POST["descripcionCorta"];
 
 //Mostrará nombre,tipo,ubicación, errores, tamaño; ddel archivo
 //var_dump($_FILES['imagen'])
@@ -92,7 +93,7 @@ if (isset($_FILES['imagen3'])) {
     }
 }
 
-$insertar = "INSERT juegos (nombre,descripcion,foto1, foto2, foto3) VALUES ('$nombre','$descripcion', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3')";
+$insertar = "INSERT juegos (nombre,descripcion,descripcion_corta, foto1, foto2, foto3) VALUES ('$nombre','$descripcion', '$descripcionCorta', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3')";
 mysqli_query($conexion, $insertar);
 
 header("Location:index.php");

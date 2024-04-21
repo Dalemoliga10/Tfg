@@ -27,20 +27,36 @@ include "header.php";
                                 <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
+                                <label for="descripcionCorta" class="form-label">Descripción Corta</label>
+                                <textarea class="form-control" name="descripcionCorta" id="descripcionCorta" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
                                 <label for="imagen" class="form-label">Imagen</label>
                                 <input type="file" class="form-control" name="imagen" id="imagen" accept="image/*" required />
                             </div>
                             <div class="mb-3">
                                 <label for="imagen2" class="form-label">Imagen 2</label>
-                                <input type="file" class="form-control" name="imagen2" id="imagen2" accept="image/*" required />
+                                <input type="file" class="form-control" name="imagen2" id="imagen2" accept="image/*" required/>
                             </div>
                             <div class="mb-3">
                                 <label for="imagen3" class="form-label">Imagen 3</label>
-                                <input type="file" class="form-control" name="imagen3" id="imagen3" accept="image/*" required />
+                                <input type="file" class="form-control" name="imagen3" id="imagen3" accept="image/*" required/>
                             </div>
                             <div class="mb-3">
                                 <label for="pagOficial" class="form-label">Pagina Oficial</label>
-                                <input type="text" class="form-control" name="pagOficial" id="pagOficial" required />
+                                <input type="text" class="form-control" name="pagOficial" id="pagOficial"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etiqueta1" class="form-label">Etiqueta 1</label>
+                                <input type="number" class="etiqueta1" name="etiqueta1" id="etiqueta1" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etiqueta2" class="form-label">Etiqueta 2</label>
+                                <input type="number" class="etiqueta2" name="etiqueta2" id="etiqueta2"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etiqueta3" class="form-label">Etiqueta 3</label>
+                                <input type="number" class="etiqueta3" name="etiqueta3" id="etiqueta3"/>
                             </div>
                             <div class="d-grid">
                                 <input type="submit" class="btn btn-primary" value="Crear Juego">
