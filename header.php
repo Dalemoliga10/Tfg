@@ -9,13 +9,10 @@
     $registros = mysqli_query($conexion, $consultar);
 
     $contador=0;
-
-
 ?>
 <!doctype html>
 <html lang="es">
 <head>
-    <title>Sistema CRUD de inventario de productos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
