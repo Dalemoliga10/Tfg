@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Listado de juegos</title>
 </head>
 <style>
     .card:hover {
@@ -145,7 +145,7 @@
                             echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
                         }
 
-                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[11]'";
                         $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta3);
                         while ($nombre = mysqli_fetch_row($registroEtiqueta)){
                             echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 15px;padding:5px;'>" . $nombre[0] . " </div>";
@@ -192,7 +192,7 @@
                             echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 20px;padding:5px;'>" . $nombre[0] . "</div>";
                         }
 
-                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[9]'";
+                        $consultarEtiqueta3 = "SELECT nombre FROM etiquetas WHERE id = '$registro[11]'";
                         $registroEtiqueta = mysqli_query($conexion, $consultarEtiqueta3);
                         while ($nombre = mysqli_fetch_row($registroEtiqueta)){
                             echo "<div style='border:black 1px solid;margin-right:15px;border-radius: 15px;padding:5px;'>" . $nombre[0] . " </div>";
