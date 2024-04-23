@@ -1,6 +1,7 @@
 <?php include "conexion.php" ?>
 
 <?php
+//RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
 mysqli_select_db($conexion, "bdfinal");
 
 //var_dump($_POST);
@@ -16,7 +17,7 @@ $descripcionCorta = $_POST["descripcionCorta"];
 //Habrá que crearlo anteriormente
 $directorioSubida = "imagenes/";
 $max_file_size = "5120000";
-$extensionesValidas = array("jpg", "png", "gif", "jpeg", "webp");
+$extensionesValidas = array("jpg", "jpeg", "webp");
 
 if (isset($_FILES['imagen'])) {
     $errores = 0;
@@ -41,6 +42,48 @@ if (isset($_FILES['imagen'])) {
         $nombreCompleto = $directorioSubida . $nombreArchivo;
         move_uploaded_file($directorioTemp, $nombreCompleto);
     }
+
+    // Ruta de la imagen original
+    $imagen_original = $nombreCompleto;
+
+    // Definir el nuevo tamaño
+    $nuevo_ancho = 680; // Nuevo ancho en píxeles
+    $nuevo_alto = 356; // Nuevo alto en píxeles
+
+    // Obtener las dimensiones de la imagen original
+    list($ancho_orig, $alto_orig) = getimagesize($imagen_original);
+
+    // Crear una imagen en blanco con las nuevas dimensiones
+    $nueva_imagen = imagecreatetruecolor($nuevo_ancho, $nuevo_alto);
+
+    // Cargar la imagen 
+    if ($extension == "jpg"){
+        $imagen_orig = imagecreatefromjpeg($imagen_original);
+    }elseif ($extension == "jpeg"){
+        $imagen_orig = imagecreatefromjpeg($imagen_original);
+    }elseif ($extension == "webp"){
+        $imagen_orig = imagecreatefromwebp($imagen_original);
+    }elseif ($extension == "png"){
+        $imagen_orig = imagecreatefrompng($imagen_original);
+    }
+
+
+    // Redimensionar la imagen original a la nueva imagen con el nuevo tamaño
+    imagecopyresampled($nueva_imagen, $imagen_orig, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho_orig, $alto_orig);
+
+    // Guardar la nueva imagen redimensionada
+    // $nueva_ruta = 'imagen_redimensionada.png';
+    if ($extension == "jpg" | $extension == "jpeg"){
+        imagejpeg($nueva_imagen, $nombreCompleto, 100);
+    }elseif ($extension == "webp"){
+        imagewebp($nueva_imagen, $nombreCompleto, 100);
+    }elseif ($extension == "png"){
+        imagejpeg($nueva_imagen, $nombreCompleto, 9);
+    }
+
+    // Liberar memoria
+    imagedestroy($nueva_imagen);
+    imagedestroy($imagen_orig);
 }
 
 if (isset($_FILES['imagen2'])) {
@@ -66,6 +109,46 @@ if (isset($_FILES['imagen2'])) {
         $nombreCompleto2 = $directorioSubida . $nombreArchivo2;
         move_uploaded_file($directorioTemp2, $nombreCompleto2);
     }
+    // Ruta de la imagen original
+    $imagen_original = $nombreCompleto2;
+
+    // Definir el nuevo tamaño
+    $nuevo_ancho = 680; // Nuevo ancho en píxeles
+    $nuevo_alto = 356; // Nuevo alto en píxeles
+
+    // Obtener las dimensiones de la imagen original
+    list($ancho_orig, $alto_orig) = getimagesize($imagen_original);
+
+    // Crear una imagen en blanco con las nuevas dimensiones
+    $nueva_imagen = imagecreatetruecolor($nuevo_ancho, $nuevo_alto);
+
+    // Cargar la imagen original
+    if ($extension2 == "jpg"){
+        $imagen_orig = imagecreatefromjpeg($imagen_original);
+    }elseif ($extension2 == "jpeg"){
+        $imagen_orig = imagecreatefromjpeg($imagen_original);
+    }elseif ($extension2 == "webp"){
+        $imagen_orig = imagecreatefromwebp($imagen_original);
+    }elseif ($extension2 == "png"){
+        $imagen_orig = imagecreatefrompng($imagen_original);
+    }
+
+    // Redimensionar la imagen original a la nueva imagen con el nuevo tamaño
+    imagecopyresampled($nueva_imagen, $imagen_orig, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho_orig, $alto_orig);
+
+    // Guardar la nueva imagen redimensionada
+    // $nueva_ruta = 'imagen_redimensionada.png';
+    if ($extension2 == "jpg" | $extension2 == "jpeg"){
+        imagejpeg($nueva_imagen, $nombreCompleto2, 100);
+    }elseif ($extension2 == "webp"){
+        imagewebp($nueva_imagen, $nombreCompleto2, 100);
+    }elseif ($extension2 == "png"){
+        imagejpeg($nueva_imagen, $nombreCompleto2, 100);
+    }
+
+    // Liberar memoria
+    imagedestroy($nueva_imagen);
+    imagedestroy($imagen_orig);
 }
 
 if (isset($_FILES['imagen3'])) {
@@ -91,7 +174,50 @@ if (isset($_FILES['imagen3'])) {
         $nombreCompleto3 = $directorioSubida . $nombreArchivo3;
         move_uploaded_file($directorioTemp3, $nombreCompleto3);
     }
+    // Ruta de la imagen original
+    $imagen_original = $nombreCompleto3;
+
+    // Definir el nuevo tamaño
+    $nuevo_ancho = 680; // Nuevo ancho en píxeles
+    $nuevo_alto = 356; // Nuevo alto en píxeles
+
+    // Obtener las dimensiones de la imagen original
+    list($ancho_orig, $alto_orig) = getimagesize($imagen_original);
+
+    // Crear una imagen en blanco con las nuevas dimensiones
+    $nueva_imagen = imagecreatetruecolor($nuevo_ancho, $nuevo_alto);
+
+    // Cargar la imagen original
+    if ($extension3 == "jpg" | $extension3 == "jpeg"){
+        $imagen_orig = imagecreatefromjpeg($imagen_original);
+    }elseif ($extension3 == "webp"){
+        $imagen_orig = imagecreatefromwebp($imagen_original);
+    }elseif ($extension3 == "png"){
+        $imagen_orig = imagecreatefrompng($imagen_original);
+    }
+
+    // Redimensionar la imagen original a la nueva imagen con el nuevo tamaño
+    imagecopyresampled($nueva_imagen, $imagen_orig, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho_orig, $alto_orig);
+
+    // Guardar la nueva imagen redimensionada
+    // $nueva_ruta = 'imagen_redimensionada.png';
+    if ($extension3 == "jpg" | $extension3 == "jpeg"){
+        imagejpeg($nueva_imagen, $nombreCompleto3, 100);
+    }elseif ($extension3 == "webp"){
+        imagewebp($nueva_imagen, $nombreCompleto3, 100);
+    }elseif ($extension3 == "png"){
+        imagejpeg($nueva_imagen, $nombreCompleto3, 100);
+    }
+    
+
+    // Liberar memoria
+    imagedestroy($nueva_imagen);
+    imagedestroy($imagen_orig);
 }
+
+
+
+
 
 $insertar = "INSERT juegos (nombre,descripcion,descripcion_corta, foto1, foto2, foto3) VALUES ('$nombre','$descripcion', '$descripcionCorta', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3')";
 mysqli_query($conexion, $insertar);

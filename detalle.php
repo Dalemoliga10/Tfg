@@ -45,28 +45,24 @@ while ($registro = mysqli_fetch_row($registros)) {
                         </ol>
 
                         <div class="carousel-inner" role="listbox">
+                            <div class="item" class="carousel-content">
+                                <?php echo '<img src="imagenes/' . $registro[5] . '">'; ?>
+                            </div>
+
                             <div class="item active" class="carousel-content">
-                                <?php echo '<img width="100%" height="80%" src="imagenes/' . $registro[5] . '">'; ?>
-                                <!-- <div class="carousel-caption d-none d-md-block">
-                            <h3>Gusti Ilustración</h3>
-                            <p>Exposición</p>
-                        </div> -->
+                                <?php echo '<img src="imagenes/' . $registro[6] . '">'; ?>
                             </div>
 
                             <div class="item" class="carousel-content">
-                                <?php echo '<img width="80%" height="80%" src="imagenes/' . $registro[6] . '">'; ?>
+                                <?php echo '<img src="imagenes/' . $registro[7] . '">'; ?>
                             </div>
-
-                            <div class="item" class="carousel-content">
-                                <?php echo '<img width="80%" height="80%" src="imagenes/' . $registro[7] . '">'; ?>
-                            </div>
-                            <!-- <div class="item">
-                        <img src="https://cdn.dribbble.com/users/324248/screenshots/3978513/planet2_800.jpg" alt="diseno" width="600" height="424">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>UX UI Diseño Gráfico</h3>
-                            <p>Curso</p>
-                        </div>
-                    </div> -->
+                                    <!-- <div class="item">
+                                <img src="https://cdn.dribbble.com/users/324248/screenshots/3978513/planet2_800.jpg" alt="diseno" width="600" height="424">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>UX UI Diseño Gráfico</h3>
+                                    <p>Curso</p>
+                                </div>
+                            </div> -->
 
                             <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
