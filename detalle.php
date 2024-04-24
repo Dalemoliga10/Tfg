@@ -21,18 +21,19 @@ while ($registro = mysqli_fetch_row($registros)) {
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {
             width: 100%;
-            margin:auto;
+            margin: auto;
         }
 
         .carousel-content {
-            transition: transform 0.5s ease; /* Animación de desplazamiento */
+            transition: transform 0.5s ease;
+            /* Animación de desplazamiento */
         }
     </style>
 
     <body>
-        <h1 style="text-align: center;"><?php echo $registro[1]?></h1>
-        <div class="container-fluid">
-            
+        <h1 style="text-align: center;"><?php echo $registro[1] ?></h1>
+        <div class="container-fluid" style="width: 85%;">
+
             <div class="row">
                 <div class="col-lg-8">
                     <div id="theCarousel" class="carousel slide" data-ride="carousel">
@@ -56,7 +57,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                             <div class="item" class="carousel-content">
                                 <?php echo '<img src="imagenes/' . $registro[7] . '">'; ?>
                             </div>
-                                    <!-- <div class="item">
+                            <!-- <div class="item">
                                 <img src="https://cdn.dribbble.com/users/324248/screenshots/3978513/planet2_800.jpg" alt="diseno" width="600" height="424">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3>UX UI Diseño Gráfico</h3>
@@ -81,6 +82,66 @@ while ($registro = mysqli_fetch_row($registros)) {
                         <p style="word-wrap: break-word;"><?php echo $registro[2] ?> aaaaaaaaaaaaaaaa</p>
                     </div>
                 </div>
+            </div>
+            <h1 style="text-align: center;">Enlaces descarga/compra</h1>
+            <div class="row" style="text-align: center;">
+                <div class="col-4">
+                    <h2>PC</h2>
+                    <?php
+                    $busquedaPC = "SELECT enlace from enlaces_pc WHERE id_juego = $registro[0]";
+                    $registrosPC = mysqli_query($conexion, $busquedaPC);
+                    $contadorPC = 1;
+                    while ($registroPC = mysqli_fetch_row($registrosPC)) {
+                        echo "<a href='$registroPC[0]' target='_blank'>Enlace PC " . $contadorPC . "</a><br>";
+                        $contadorPC++;
+                        
+                    }
+
+                    if ($contadorPC == 1){
+                        echo "Juego no disponible para esta plataforma";
+                    }
+
+                    ?>
+                </div>
+                <div class="col-4">
+                    <h2>Consola</h2>
+                    <?php
+                    $busquedaCon = "SELECT enlace from enlaces_consola WHERE id_juego = $registro[0]";
+                    $registrosCon = mysqli_query($conexion, $busquedaCon);
+                    $contadorCon = 1;
+                    while ($registroCon = mysqli_fetch_row($registrosCon)) {
+                        echo "<a href='$registroCon[0]' target='_blank'>Enlace Consola " . $contadorCon . "</a><br>";
+                        $contadorCon++;
+                    }
+                    if ($contadorCon == 1){
+                        echo "Juego no disponible para esta plataforma";
+                    }
+                    ?>
+                </div>
+                <div class="col-4">
+                    <h2>Movil</h2>
+                    <?php
+                    $busquedaMov = "SELECT enlace from enlaces_movil WHERE id_juego = $registro[0]";
+                    $registrosMov = mysqli_query($conexion, $busquedaMov);
+                    $contadorMov = 1;
+                    while ($registroMov = mysqli_fetch_row($registrosMov)) {
+                        echo "<a href='$registroMov[0]' target='_blank'>Enlace Movil " . $contadorMov . "</a><br>";
+                        $contadorMov++;
+                    }
+                    if ($contadorMov == 1){
+                        echo "Juego no disponible para esta plataforma";
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <h1 style="text-align: center;">Pagina oficial</h1>
+            <div class="container" style="text-align: center;">
+                <?php if(empty($registro[8])){
+                    print ("Pagina oficial no existente");
+                }else{  ?>
+                    <a href="<?php echo $registro[8] ?>" target="_blank">Pagina oficial</a>
+                <?php }?>
             </div>
         </div>
 
