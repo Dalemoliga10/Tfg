@@ -83,8 +83,8 @@ while ($registro = mysqli_fetch_row($registros)) {
                     </div>
                 </div>
             </div>
-            <h1 style="text-align: center;">Enlaces descarga/compra</h1>
-            <div class="row" style="text-align: center;">
+            <h1 style="text-align: center;margin-top:50px;">Enlaces descarga/compra</h1>
+            <div class="row mb-3" style="text-align: center;">
                 <div class="col-4">
                     <h2>PC</h2>
                     <?php
@@ -135,12 +135,12 @@ while ($registro = mysqli_fetch_row($registros)) {
                 </div>
             </div>
 
-            <h1 style="text-align: center;">Pagina oficial</h1>
-            <div class="container" style="text-align: center;">
+            <h1 style="text-align: center;margin-top:60px;">Pagina oficial</h1>
+            <div class="container" style="text-align: center;margin-bottom: 40px;">
                 <?php if(empty($registro[8])){
                     print ("Pagina oficial no existente");
                 }else{  ?>
-                    <a href="<?php echo $registro[8] ?>" target="_blank">Pagina oficial</a>
+                    <a href="<?php echo $registro[8] ?>" target="_blank" style="margin-right: 3%;" >Pagina oficial</a>
                 <?php }?>
             </div>
         </div>

@@ -82,15 +82,17 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <div class='dropdown'>
-                <div class='title pointerCursor' style="text-align: center;">
+        <div class="d-flex justify-content-center" style="width: 100%;">
+            <div class='dropdown' style="width: 80%;">
+                <div class='title pointerCursor' style="text-align: center;clear:both;">
                     Filtrar por categoria
                 </div>
-                <div class='menu pointerCursor hide' style="text-align: center;">
+                <div class='menu pointerCursor hide d-flex justify-content-around'>
                         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
-                        <label for="option<?php echo $contador ?>" style="margin-top: 5px;"><?php echo $registro[0]?></label>
-                        <input type="checkbox" id='option<?php echo $contador ?>' name="<?php echo $registro[0] ?>" style="margin-bottom:10px;"><br>
+                        <div>
+                            <label for="option<?php echo $contador ?>" style="margin-top: 5px;"><?php echo $registro[0]?></label>
+                            <input type="checkbox" id='option<?php echo $contador ?>' name="<?php echo $registro[0] ?>" style="margin-bottom:10px;"><br>
+                        </div>
                         <?php $contador = $contador + 1;} ?>
                 </div>
 
