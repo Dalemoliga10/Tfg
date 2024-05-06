@@ -7,7 +7,7 @@ include "header.php";
         <div class="col text-center">
             <div class="card">
                 <div class="card-header display-6">
-                    Alta de producto
+                    Creacion de nuevo juego
                 </div>
             </div>
             <div class="row mt-3 justify-content-md-center">
