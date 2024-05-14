@@ -7,16 +7,19 @@ if (session_status()){
     if($_SESSION["rol"] == "admin"){
         include_once("../conexion.php");
         $idElimina = $_GET["codigo"];
-        $consultar = "SELECT * FROM juegos WHERE id = $idElimina";
+        $consultar = "SELECT * FROM usuarios WHERE id_usuario = $idElimina";
 
         $registros = mysqli_query($conexion, $consultar);
 
         //Codigo
         while ($registro = mysqli_fetch_row($registros)) {
-            print("¿Seguro que quieres eliminar el juego . $registro[1] ?");
+            print("¿Seguro que quieres eliminar el usuario . $registro[1] ?");
+        
         }
         print "<a href='procesoEliminacion.php?codigo=$idElimina'>Eliminar</a>";
-        print "<a href='../admin/listadoJuegos?'>Volver</a>";
+        print "<a href='../admin/listadoUsuarios?'>Volver</a>";
+
+
 
     }else{
         echo "No tienes permisos para acceder aqui";

@@ -1,7 +1,6 @@
 <?php
 include "../headerDashboard.php";
 
-
 if (session_status()) {
     session_start();
     if ($_SESSION["rol"] == "admin") {
@@ -15,14 +14,14 @@ if (session_status()) {
         // Incluir el archivo de conexión
         require_once('../conexion.php');
 
-        print "<h1>Informacion de usuarios</h1>";
+        print "<h1 style=text-align:center;>Informacion de Juegos</h1>";
 
         $consultar = "SELECT * FROM juegos";
 
         $registros = mysqli_query($conexion, $consultar);
         $cambiado = "";
 
-        print "<table>";
+        print "<table style=text-align:center;>";
         print "<tr><th>nombre</th>";
         print "<th>descripcion</th>";
         print "<th>descripcion_corta</th>";
@@ -46,7 +45,7 @@ if (session_status()) {
             print "<td>$registro[9]</td>";
             print "<td>$registro[10]</td>";
             print "<td>$registro[11]</td>";
-            print "<td><a href='/CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
+            print "<td><a href='../CRUD/eliminar.php?codigo=$registro[0]'>Eliminar</a>";
             print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
             //Al acceder al enlace podemos sacar el id del usuario facilmente
             print "<a href='/CRUDUser/modificarUsuario.php?codigo=$$registro[0]'>Modificar</a></td></tr>";

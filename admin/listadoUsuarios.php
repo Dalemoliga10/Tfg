@@ -43,7 +43,7 @@ if (session_status()) {
             print "<td>$registro[3]</td>";
             print "<td>$registro[4]</td>";
             print "<td>$registro[5]</td>";
-            print "<td><a href='/CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
+            print "<td><a href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
             print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
             //Al acceder al enlace podemos sacar el id del usuario facilmente
             print "<a href='/CRUDUser/modificarUsuario.php?codigo=$$registro[0]'>Modificar</a></td></tr>";

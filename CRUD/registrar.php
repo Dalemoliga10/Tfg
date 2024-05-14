@@ -54,7 +54,7 @@ if (isset($_FILES['imagen'])) {
     $nuevo_ancho = 680; // Nuevo ancho en píxeles
     $nuevo_alto = 356; // Nuevo alto en píxeles
 
-    // Obtener las dimensiones de la imagen original
+    // Dimensiones de la imagen original
     list($ancho_orig, $alto_orig) = getimagesize($imagen_original);
 
     // Crear una imagen en blanco con las nuevas dimensiones
