@@ -31,7 +31,7 @@ if ($correoUsado == False){
     header("Location:index.php");
 }else{
     echo "Correo ya usado<br>";
-    echo "<a href='index.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
+    echo "<a href='formInicioSesion.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
 }
 
 

@@ -1,15 +1,3 @@
-<?php
-
-    require_once('conexion.php');
-
-    mysqli_select_db($conexion, "bdfinal");
-
-    $consultar = "SELECT nombre FROM etiquetas";
-
-    $registros = mysqli_query($conexion, $consultar);
-
-    $contador=0;
-?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -26,3 +14,4 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 </header>
+<h1 style="text-align: center;">Bienvenido al dashboard</h1>

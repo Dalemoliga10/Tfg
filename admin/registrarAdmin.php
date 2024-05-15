@@ -1,4 +1,4 @@
-<?php include "conexion.php" ?>
+<?php include "../conexion.php" ?>
 
 <?php
 //RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
@@ -28,10 +28,10 @@ if ($correoUsado == False){
     $hash = password_hash($contra, PASSWORD_DEFAULT);
     $insertar = "INSERT usuarios (nombre, apellidos, rol,correo, contrasena) VALUES ('$nombre', '$apellidos', '$rol', '$correo', '$hash')";
     mysqli_query($conexion, $insertar);
-    header("Location:index.php");
+    header("Location:../dashboard.php");
 }else{
     echo "Correo ya usado<br>";
-    echo "<a href='index.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
+    echo "<a href='../dashboard.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
 }
 
 ?>
