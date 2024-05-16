@@ -94,7 +94,6 @@ while ($registro = mysqli_fetch_row($registros)) {
                     while ($registroPC = mysqli_fetch_row($registrosPC)) {
                         echo "<a href='$registroPC[0]' target='_blank'>Enlace PC " . $contadorPC . "</a><br>";
                         $contadorPC++;
-                        
                     }
 
                     if ($contadorPC == 1){

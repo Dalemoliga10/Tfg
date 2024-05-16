@@ -19,7 +19,7 @@ $pagOficial = $_POST["pagOficial"];
 
 //Habrá que crearlo anteriormente
 //Si falla algo probablemente sera esto
-$directorioSubida = "../imagenes";
+$directorioSubida = "../imagenes/";
 $max_file_size = "5120000";
 $extensionesValidas = array("jpg", "jpeg", "webp");
 
@@ -213,7 +213,6 @@ if (isset($_FILES['imagen3'])) {
         imagejpeg($nueva_imagen, $nombreCompleto3, 100);
     }
     
-
     // Liberar memoria
     imagedestroy($nueva_imagen);
     imagedestroy($imagen_orig);

@@ -13,6 +13,8 @@ if (session_status()) {
 
         // Incluir el archivo de conexión
         require_once('../conexion.php');
+        
+        mysqli_select_db($conexion, "bdfinal");
 
         print "<h1 style=text-align:center;>Informacion de Juegos</h1>";
 
@@ -46,9 +48,9 @@ if (session_status()) {
             print "<td>$registro[10]</td>";
             print "<td>$registro[11]</td>";
             print "<td><a href='../CRUD/eliminar.php?codigo=$registro[0]'>Eliminar</a>";
-            print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
+            print "<a href='../CRUD/alta.php?'>Añadir</a>";
             //Al acceder al enlace podemos sacar el id del usuario facilmente
-            print "<a href='/CRUDUser/modificarUsuario.php?codigo=$$registro[0]'>Modificar</a></td></tr>";
+            print "<a href='../CRUD/modificar.php?codigo=$registro[0]'>Modificar</a></td></tr>";
         }
         print "</table>";
         print "<a href='../dashboard.php?'>volver al inicio</a>";
