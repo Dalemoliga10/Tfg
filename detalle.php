@@ -76,11 +76,16 @@ while ($registro = mysqli_fetch_row($registros)) {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 d-flex flex-column">
                     <div class="container" style="width: 100%;">
                         <!-- Evito que se salga el texto -->
                         <p style="word-wrap: break-word;"><?php echo $registro[2] ?> aaaaaaaaaaaaaaaa</p>
                     </div>
+                    <?php if (@$_SESSION["rol"]) { ?>
+                        <div class="container d-flex mt-auto">
+                            <a href="comentar.php?juego=<?php echo $registro[0]?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <h1 style="text-align: center;margin-top:50px;">Enlaces descarga/compra</h1>
@@ -96,7 +101,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         $contadorPC++;
                     }
 
-                    if ($contadorPC == 1){
+                    if ($contadorPC == 1) {
                         echo "Juego no disponible para esta plataforma";
                     }
 
@@ -112,7 +117,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         echo "<a href='$registroCon[0]' target='_blank'>Enlace Consola " . $contadorCon . "</a><br>";
                         $contadorCon++;
                     }
-                    if ($contadorCon == 1){
+                    if ($contadorCon == 1) {
                         echo "Juego no disponible para esta plataforma";
                     }
                     ?>
@@ -127,7 +132,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         echo "<a href='$registroMov[0]' target='_blank'>Enlace Movil " . $contadorMov . "</a><br>";
                         $contadorMov++;
                     }
-                    if ($contadorMov == 1){
+                    if ($contadorMov == 1) {
                         echo "Juego no disponible para esta plataforma";
                     }
                     ?>
@@ -136,11 +141,11 @@ while ($registro = mysqli_fetch_row($registros)) {
 
             <h1 style="text-align: center;margin-top:60px;">Pagina oficial</h1>
             <div class="container" style="text-align: center;margin-bottom: 40px;">
-                <?php if(empty($registro[8])){
-                    print ("Pagina oficial no existente");
-                }else{  ?>
-                    <a href="<?php echo $registro[8] ?>" target="_blank" style="margin-right: 3%;" >Pagina oficial</a>
-                <?php }?>
+                <?php if (empty($registro[8])) {
+                    print("Pagina oficial no existente");
+                } else {  ?>
+                    <a href="<?php echo $registro[8] ?>" target="_blank" style="margin-right: 3%;">Pagina oficial</a>
+                <?php } ?>
             </div>
         </div>
 
