@@ -43,7 +43,7 @@ if ($_SESSION["rol"] == "admin"){
     <div class="container" style="text-align:center;">
         <div class="row">
             <div class="col-md-6 border p-3">
-                <div onclick="window.location.href='user/listaFavoritos.php';" style="text-decoration:none; cursor:pointer;">
+                <div onclick="window.location.href='user/listadoFavoritos.php';" style="text-decoration:none; cursor:pointer;">
                     Ver tu lista de favoritos
                     <br>
                     <i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i>

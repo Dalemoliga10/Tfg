@@ -14,4 +14,3 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 </header>
-<h1 style="text-align: center;">Bienvenido al dashboard</h1>

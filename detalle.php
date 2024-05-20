@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
-$juego = $_GET["idJuego"];
+$juego = @$_GET["idJuego"];
+
+if (empty($juego)) {
+    $juego = $_GET['id_juego'];
+}
 
 include("header.php");
 $busqueda = 'SELECT * FROM juegos WHERE id =' . $juego;
@@ -83,7 +87,8 @@ while ($registro = mysqli_fetch_row($registros)) {
                     </div>
                     <?php if (@$_SESSION["rol"]) { ?>
                         <div class="container d-flex mt-auto">
-                            <a href="comentar.php?juego=<?php echo $registro[0]?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <a href="comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <a href="guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                         </div>
                     <?php } ?>
                 </div>
@@ -150,9 +155,44 @@ while ($registro = mysqli_fetch_row($registros)) {
         </div>
 
 
-    </body>
-<?php }
-include("footer.php");
-?>
 
-</html>
+    <?php } ?>
+    <div class="container">
+        <h1 style="text-align: center;">Comentarios del juego</h1>
+        <?php
+            $seleccionarComentarios = "SELECT * FROM comentarios WHERE id_juego = '$juego'";
+            $registros = mysqli_query($conexion, $seleccionarComentarios);
+            while ($registro = mysqli_fetch_row($registros)) {?>
+                <div class="card mb-1">
+                <div class="card-body flex-column flex-md-row">
+                    <?php 
+                        $UsuarioComenta = "SELECT nombre, apellidos FROM usuarios WHERE id_usuario = '$registro[1]'";
+                        $registrosUsuario = mysqli_query($conexion, $UsuarioComenta);
+
+                        while ($registroUsuarioComenta = mysqli_fetch_row($registrosUsuario)) {
+                            $nombre= $registroUsuarioComenta[0];
+                            $apellidos = $registroUsuarioComenta[1];
+                        }
+                    ?>
+                    <h3>Reseña de <?php echo $nombre . $apellidos?></h3>
+
+                    <p><?php echo $registro[4]?></p>
+                    <div>
+                        <h4>Valoracion:</h4>
+                        <p><?php echo $registro[3]?></p>
+                    </div>
+                </div>
+            </div>
+
+
+        <?php
+            }
+            
+        ?>
+    </div>
+    </body>
+    <?php
+    include("footer.php");
+    ?>
+
+    </html>

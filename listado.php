@@ -105,9 +105,7 @@
             if($tieneEtiquetas == True){
             echo "<a href='detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
             
-            
             ?>
-
             <div class="card mb-1">
                 <div class="card-body d-flex flex-column flex-md-row">
                     

@@ -21,6 +21,7 @@ while ($registro = mysqli_fetch_row($registros)){
         session_start();
 
         // Establece valores en la sesión
+        $_SESSION['id'] = $registro[0];
         $_SESSION['nombre'] = $registro[1];
         $_SESSION['apellidos'] = $registro[2];
         $_SESSION['rol'] = $registro[3];
