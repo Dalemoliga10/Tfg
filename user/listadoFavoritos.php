@@ -14,6 +14,7 @@
 </style>
 
 <body>
+    <p class="d-flex justify-content-center">Tus juegos favoritos</p>
     <?php
     session_start();
     include "../headerDashboard.php";
@@ -34,12 +35,14 @@
 
 
     ?>
-        <p class="d-flex justify-content-center">Tus juegos favoritos</p>
 
-        <div class="container-fluid d-flex flex-column mb-4" style="width: 75%;">
-            <?php while ($registro = mysqli_fetch_row($registros)) { 
-                echo "<a href='../detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
-                ?>
+
+
+        <?php while ($registro = mysqli_fetch_row($registros)) {
+            echo "<div class='container-fluid d-flex flex-column mb-4' style='width: 75%;'>";
+            echo "<a href='../detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
+        ?>
+            
                 <!-- Ya he sacado los datos basados en el nombre, ahora filtro por etiqueta -->
                 <div class="card mb-1">
                     <div class="card-body d-flex flex-column flex-md-row">
@@ -87,16 +90,17 @@
                         ?>
                     </div>
                 </div>
-        <?php
-                echo "</a>";
-            }
-        } ?>
-        </div>
+            </div>
+    <?php
+            echo "</a>";
+        }
+    } ?>
 
 
-        <?php
-        include "../footer.php";
-        ?>
+
+    <?php
+    include "../footer.php";
+    ?>
 </body>
 
 </html>
