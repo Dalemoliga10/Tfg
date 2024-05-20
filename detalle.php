@@ -174,7 +174,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                             $apellidos = $registroUsuarioComenta[1];
                         }
                     ?>
-                    <h3>Reseña de <?php echo $nombre . $apellidos?></h3>
+                    <h3>Reseña de <?php echo $nombre . " " . $apellidos?></h3>
 
                     <p><?php echo $registro[4]?></p>
                     <div>
