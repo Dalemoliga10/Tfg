@@ -13,10 +13,9 @@ if (session_status()) {
     
     
     </style>";
-
         // Incluir el archivo de conexión
         require_once('../conexion.php');
-
+        mysqli_select_db($conexion, "bdfinal");
         print "<h1>Informacion de usuarios</h1>";
 
         $consultar = "SELECT * FROM usuarios";
@@ -43,10 +42,15 @@ if (session_status()) {
             print "<td>$registro[3]</td>";
             print "<td>$registro[4]</td>";
             print "<td>$registro[5]</td>";
-            print "<td><a href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
-            print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
-            //Al acceder al enlace podemos sacar el id del usuario facilmente
-            print "<a href='/CRUDUser/modificarUsuario.php?codigo=$$registro[0]'>Modificar</a></td></tr>";
+            if ($registro[4] != $_SESSION["correo"]){
+                print "<td><a href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
+                print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
+                //Al acceder al enlace podemos sacar el id del usuario facilmente
+                print "<a href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></td></tr>";
+            }else{
+                print "<td>Eres tu</td></tr>";
+            }
+            
         }
         
         print "</table>";

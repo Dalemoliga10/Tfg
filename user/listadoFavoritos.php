@@ -36,8 +36,6 @@
 
     ?>
 
-
-
         <?php while ($registro = mysqli_fetch_row($registros)) {
             echo "<div class='container-fluid d-flex flex-column mb-4' style='width: 75%;'>";
             echo "<a href='../detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
