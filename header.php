@@ -32,7 +32,7 @@ $contador = 0;
     }
 
     .dropdown {
-        border: 0.1em solid black;
+        border: 0.1em solid white;
         width: 20%;
         margin-bottom: 1em;
     }
@@ -71,9 +71,10 @@ $contador = 0;
         transform: rotate(90deg);
     }
 
-    /* form{
+    form{
         background-color: rgb(18, 0, 119);
-    } */
+        color: white;
+    }
 </style>
 <header>
     <form action="listado.php" id="miniform" name="miniform" method="get">

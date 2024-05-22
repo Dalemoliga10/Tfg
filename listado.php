@@ -6,13 +6,13 @@
     <title>Listado de juegos</title>
 </head>
 <style>
-.card {
-    background-color: rgb(0, 51, 128);
-    transition: background-color 0.5s !important; /* transición */
-}
-
 .card:hover {
     background-color: blue;
+}
+
+.card {
+    background-color: rgb(18, 0, 119) ;
+    transition: background-color 0.5s ; /* transición */
 }
 
 </style>
