@@ -6,11 +6,17 @@
     <title>Listado de juegos</title>
 </head>
 <style>
-    .card:hover {
-        background-color: blue;
-        transition: background-color 0.5s; /*transicion*/
-    }
+.card {
+    background-color: rgb(0, 51, 128);
+    transition: background-color 0.5s !important; /* transición */
+}
+
+.card:hover {
+    background-color: blue;
+}
+
 </style>
+<link rel="stylesheet" href="css/estiloListado.css">
 <body>
     <?php
     include "header.php";
@@ -34,7 +40,7 @@
         $selectedOptions[$i] = str_replace("_", " ", $selectedOptions[$i]);
     }
 
-    echo sizeof($selectedOptions);
+    //echo sizeof($selectedOptions);
     //Con esto filtro por nombre y etiquetas solo si ha puesto
     $idEtiquetas = array();
     if(sizeof($selectedOptions)>0){

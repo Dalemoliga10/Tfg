@@ -70,6 +70,10 @@ $contador = 0;
     .rotate-90 {
         transform: rotate(90deg);
     }
+
+    /* form{
+        background-color: rgb(18, 0, 119);
+    } */
 </style>
 <header>
     <form action="listado.php" id="miniform" name="miniform" method="get">
@@ -106,9 +110,9 @@ $contador = 0;
                 <div class='title pointerCursor' style="text-align: center;clear:both;">
                     Filtrar por categoria
                 </div>
-                <div class='menu pointerCursor hide d-flex justify-content-around'>
+                <div class='menu pointerCursor hide d-flex flex-wrap justify-content-around'>
                     <?php while ($registro = mysqli_fetch_row($registros)) { ?>
-                        <div>
+                        <div style="margin-left: 40px;">
                             <label for="option<?php echo $contador ?>" style="margin-top: 5px;"><?php echo $registro[0] ?></label>
                             <input type="checkbox" id='option<?php echo $contador ?>' name="<?php echo $registro[0] ?>" style="margin-bottom:10px;"><br>
                         </div>
