@@ -1,12 +1,12 @@
 <?php
 include "header.php";
 ?>
-
+<body >
 <div class="container my-5">
     <div class="row">
         <div class="col text-center">
             <div class="card">
-                <div class="card-header display-6">
+                <div class="card-header display-6" style="color: #CFB53B;">
                     Inicio sesion
                 </div>
             </div>
@@ -39,7 +39,7 @@ include "header.php";
         </div>
     </div>
 </div>
-
+</body>
 <?php
 include "footer.php";
 ?>

@@ -10,8 +10,8 @@ include 'header.php'
     <title>Bienvenido a gamedex</title>
 </head>
 
-<body>
-    <main>
+<body style="background-color: #CECED7;">
+    <main style="margin-top: 20px;">
         <div class="container d-flex flex-column align-items-center" style="width: 75%;">
             <h1>Bienvenido a gamedex</h1>
             <p>¡Bienvenidos a nuestra biblioteca de videojuegos, el paraíso de los jugadores!
@@ -21,7 +21,7 @@ include 'header.php'
                 favorito. Desde emocionantes juegos de acción y trepidantes aventuras hasta desafiantes rompecabezas
                 y cautivadoras historias narrativas, aquí hay algo para cada tipo de jugador.</p>
             <h2>En esta página puedes:</h2>
-            <ul class="fs-6">
+            <ul class="fs-6" style="margin-top: 10px;">
                 <li>Puedes buscar cualquier juego que esté disponible en nuestra extensa base de datos de juegos</li>
                 <li>Comentar sobre un juego y darle una valoración personal según tu experiencia</li>
                 <li>Sugerir la inclusión de un nuevo juego que aún no esté en nuestra base de datos</li>

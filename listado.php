@@ -6,18 +6,22 @@
     <title>Listado de juegos</title>
 </head>
 <style>
+.card {
+    transition: background-color 0.5s ease;
+    /* transición */
+}
 .card:hover {
-    background-color: blue;
+    color: #3E5F8A;
+    transition: border 0.5s ;
+    transition: color 0.5s ;
+    
+    background-color: #CFB53B;
 }
 
-.card {
-    background-color: rgb(18, 0, 119) ;
-    transition: background-color 0.5s ; /* transición */
-}
 
 </style>
 <link rel="stylesheet" href="css/estiloListado.css">
-<body>
+<body style="background-color: #CECED7;">
     <?php
     include "header.php";
     require_once("conexion.php");
@@ -204,9 +208,10 @@
                     ?>
                 </div>
             </div>
-            
         <?php }echo "</a>";} ?>
     </div>
+    <a href="index.php" style="text-align: center;"><i class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>
+
     <?php
     include "footer.php";
     ?>

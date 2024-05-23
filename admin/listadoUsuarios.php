@@ -54,7 +54,8 @@ if (session_status()) {
         }
         
         print "</table>";
-        print "<a href='../dashboard.php?'>volver al inicio</a>";
+        print "<a href='../dashboard.php' style='text-align:center;'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;''></i></a>";
+
     } else {
         echo "No tienes permisos para acceder aqui";
         echo "<a href='../index.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";

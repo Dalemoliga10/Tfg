@@ -32,7 +32,7 @@ $contador = 0;
     }
 
     .dropdown {
-        border: 0.1em solid white;
+        border: 0.1em solid rgb(239,184,16);
         width: 20%;
         margin-bottom: 1em;
     }
@@ -72,8 +72,8 @@ $contador = 0;
     }
 
     form{
-        background-color: rgb(18, 0, 119);
-        color: white;
+        background-color: #3E5F8A;
+        color: #CFB53B;
     }
 </style>
 <header>
@@ -107,7 +107,7 @@ $contador = 0;
             </div>
         </div>
         <div class="d-flex justify-content-center" style="width: 100%;">
-            <div class='dropdown' style="width: 80%;">
+            <div class='dropdown' style="width: 80%;background-color:white;">
                 <div class='title pointerCursor' style="text-align: center;clear:both;">
                     Filtrar por categoria
                 </div>
