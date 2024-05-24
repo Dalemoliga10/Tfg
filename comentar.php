@@ -29,7 +29,7 @@ $_SESSION["juego"] = $_GET["juego"];
                             </div>
                             <div class="mb-3">
                                 <label for="valoracion" class="form-label">Valoracion:</label>
-                                <input type="number" class="form-control" name="valoracion" id="valoracion" rows="3" max="5" min="0" step="0.1"/>
+                                <input type="number" class="form-control" name="valoracion" id="valoracion" rows="3" max="5" min="0" step="0.1" required/>
                             </div>
                             <div class="d-grid">
                                 <input type="submit" class="btn btn-primary" value="Subir comentario" required/>

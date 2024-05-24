@@ -77,6 +77,7 @@ $contador = 0;
     }
 </style>
 <header>
+    
     <form action="listado.php" id="miniform" name="miniform" method="get">
         <div class="container-fluid d-flex align-items-center" style="height: 100px;">
             <!-- Hay que poner la imagen para que no moleste al form -->

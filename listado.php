@@ -56,7 +56,7 @@
                 $idEtiquetas []= $registro[0];
             }
         }
-        var_dump($idEtiquetas);
+        $idEtiquetas = array_slice($idEtiquetas, 0, 3);
         
     }
     $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
@@ -68,14 +68,10 @@
 
     
 
-    $registros = mysqli_query($conexion, $consultar);
+    $registros = mysqli_query($conexion, $consultar);?>
 
-    if($nombre != ''){
-    ?>
-    <p class="d-flex justify-content-center">Juegos que comienzan por <?php echo $nombre ?></p>
-    <?php }else{?>
-        <p class="d-flex justify-content-center">Todos los juegos</p>
-    <?php } ?>
+
+    <h3 class="d-flex justify-content-center">Mostrando resultados</h3>
 
     <div class="container-fluid d-flex flex-column mb-4" style="width: 75%;">
         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
