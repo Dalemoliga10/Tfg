@@ -180,7 +180,9 @@
                         </div>
                         <div>
                             <?php echo $registro[3]; ?>
+                            
                         </div>
+                        
                     </div>
                 </div>
                 <div class="container d-flex justify-content-center mb-2">

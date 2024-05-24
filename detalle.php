@@ -32,7 +32,32 @@ while ($registro = mysqli_fetch_row($registros)) {
             transition: transform 0.5s ease;
             /* Animación de desplazamiento */
         }
+
+        .star-rating {
+            white-space: nowrap;
+            display: inline-block;
+            width: 10em; /* tamaño estrellas */
+            height: 2em; /* tamaño estrellas */
+            overflow: hidden;
+            position: relative;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="gray" d="M287.9 17.8L354 150.2 497.9 171.5C514.4 173.9 520.1 194.7 507 204.9L402 288.1 423.6 429.8C425.9 445.3 411.8 456.6 398.3 451.7L288 406.1 177.7 451.7C164.2 456.6 150.1 445.3 152.4 429.8L174 288.1 68.96 204.9C55.91 194.7 61.6 173.9 78.09 171.5L222 150.2 287.9 17.8z"/></svg>') repeat-x;
+            background-size: 2em 2em; /* Tamaño de cada estrella */
+        }
+        .star-rating .filled {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="gold" d="M287.9 17.8L354 150.2 497.9 171.5C514.4 173.9 520.1 194.7 507 204.9L402 288.1 423.6 429.8C425.9 445.3 411.8 456.6 398.3 451.7L288 406.1 177.7 451.7C164.2 456.6 150.1 445.3 152.4 429.8L174 288.1 68.96 204.9C55.91 194.7 61.6 173.9 78.09 171.5L222 150.2 287.9 17.8z"/></svg>') repeat-x;
+            background-size: 2em 2em; /* Tamaño de cada estrella */
+        }
     </style>
+    <script> //Rellena las estrellas dependiendo de la valoracion
+        function setRating(rating) {
+            const percentage = (rating / 5) * 100;
+            document.querySelector('.star-rating .filled').style.width = `${percentage}%`;
+        }
+    </script>
 
     <body>
         <h1 style="text-align: center;"><?php echo $registro[1] ?></h1>
@@ -84,6 +109,15 @@ while ($registro = mysqli_fetch_row($registros)) {
                     <div class="container" style="width: 100%;">
                         <!-- Evito que se salga el texto -->
                         <p style="word-wrap: break-word;"><?php echo $registro[2] ?> aaaaaaaaaaaaaaaa</p>
+                    </div>
+                    <div>
+                        <h2>Valoracion</h2>
+                        <div class="star-rating">
+                            <div class="filled"></div><!--Pinta el color-->
+                            <script>
+                                setRating(<?php echo $registro[4]?>)
+                            </script>
+                        </div>
                     </div>
                     <?php if (@$_SESSION["rol"]) { ?>
                         <div class="container d-flex mt-auto">
@@ -160,34 +194,40 @@ while ($registro = mysqli_fetch_row($registros)) {
     <div class="container">
         <h1 style="text-align: center;">Comentarios del juego</h1>
         <?php
-            $seleccionarComentarios = "SELECT * FROM comentarios WHERE id_juego = '$juego'";
-            $registros = mysqli_query($conexion, $seleccionarComentarios);
-            while ($registro = mysqli_fetch_row($registros)) {?>
-                <div class="card mb-1">
+        $seleccionarComentarios = "SELECT * FROM comentarios WHERE id_juego = '$juego'";
+        $registros = mysqli_query($conexion, $seleccionarComentarios);
+        while ($registro = mysqli_fetch_row($registros)) { ?>
+            <div class="card mb-1">
                 <div class="card-body flex-column flex-md-row">
-                    <?php 
-                        $UsuarioComenta = "SELECT nombre, apellidos FROM usuarios WHERE id_usuario = '$registro[1]'";
-                        $registrosUsuario = mysqli_query($conexion, $UsuarioComenta);
+                    <?php
+                    $UsuarioComenta = "SELECT nombre, apellidos FROM usuarios WHERE id_usuario = '$registro[1]'";
+                    $registrosUsuario = mysqli_query($conexion, $UsuarioComenta);
 
-                        while ($registroUsuarioComenta = mysqli_fetch_row($registrosUsuario)) {
-                            $nombre= $registroUsuarioComenta[0];
-                            $apellidos = $registroUsuarioComenta[1];
-                        }
+                    while ($registroUsuarioComenta = mysqli_fetch_row($registrosUsuario)) {
+                        $nombre = $registroUsuarioComenta[0];
+                        $apellidos = $registroUsuarioComenta[1];
+                    }
                     ?>
-                    <h3>Reseña de <?php echo $nombre . " " . $apellidos?></h3>
+                    <h3>Reseña de <?php echo $nombre . " " . $apellidos ?></h3>
 
-                    <p><?php echo $registro[4]?></p>
+                    <p><?php echo $registro[4] ?></p>
                     <div>
-                        <h4>Valoracion:</h4>
+                        <h2>Valoracion</h2>
                         <p><?php echo $registro[3]?></p>
+                        <!--<div class="star-rating">
+                            <div class="filled"></div>
+                            <script>
+                                setRating(<?php echo $registro[3]?>)
+                            </script>
+                        </div>-->
                     </div>
                 </div>
             </div>
 
 
         <?php
-            }
-            
+        }
+
         ?>
     </div>
     </body>
