@@ -1,5 +1,32 @@
+
 <?php
-include "../headerDashboard.php";
+include "../headerDashboard.php";?>
+<style>
+    .btn-animado {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.1s;
+    }
+
+    .btn-animado::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.4s;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+    }
+
+
+    .btn-animado:active {
+        transform: scale(0.95);
+    }
+</style>
+<?php
 
 
 if (session_status()) {
@@ -29,7 +56,7 @@ if (session_status()) {
         print "<th>rol</th>";
         print "<th>correo</th>";
         print "<th>contraseña</th>";
-        print "<th>acciones</th></tr>";
+        print "<th style='width:20%;'>acciones</th></tr>";
         //PAra poder mandar el id del usuario
         while ($registro = mysqli_fetch_row($registros)) {
             $nombre = $registro[1];
@@ -43,12 +70,12 @@ if (session_status()) {
             print "<td>$registro[4]</td>";
             print "<td>$registro[5]</td>";
             if ($registro[4] != $_SESSION["correo"]){
-                print "<td><a href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a>  ";
-                print "<a href='/CRUDUser/añadirUsuario.php?'>Añadir</a>  ";
+                print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a></button>  ";
+                print "<button class='btn btn-primary btn-animado' style='background-color:green;'><a style='color:black;text-decoration:none;' href='/CRUDUser/añadirUsuario.php?'>Añadir</a></button>";
                 //Al acceder al enlace podemos sacar el id del usuario facilmente
-                print "<a href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></td></tr>";
+                print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
             }else{
-                print "<td>Eres tu</td></tr>";
+                print "<td style='text-align:center;'>Eres tu</td></tr>";
             }
             
         }

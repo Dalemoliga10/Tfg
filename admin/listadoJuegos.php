@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="listados.css">
 <?php
 include "../headerDashboard.php";
 
@@ -9,6 +10,7 @@ if (session_status()) {
         table,tr,td,th{
             border:1px solid black;
             border-collapse:collapse;
+            margin-top:20px;
         </style>";
 
         // Incluir el archivo de conexión
@@ -24,17 +26,17 @@ if (session_status()) {
         $cambiado = "";
 
         print "<table style=text-align:center;>";
-        print "<tr><th>nombre</th>";
-        print "<th>descripcion</th>";
+        print "<tr><th style='width: 10%;'>nombre</th>";
+        print "<th style='width: 30%;'>descripcion</th>";
         print "<th>descripcion_corta</th>";
         print "<th>foto1</th>";
         print "<th>foto2</th>";
         print "<th>foto3</th>";
         print "<th>Página oficial</th>";
-        print "<th>etiqueta1</th>";
-        print "<th>etiqueta2</th>";
-        print "<th>etiqueta3</th>";
-        print "<th>acciones</th></tr>";
+        print "<th>etq1</th>";
+        print "<th>etq2</th>";
+        print "<th>etq3</th>";
+        print "<th style='width:20%;'>acciones</th></tr>";
         //PAra poder mandar el id del usuario
         while ($registro = mysqli_fetch_row($registros)) {
             print "<tr><td>$registro[1]</td>";
@@ -47,10 +49,10 @@ if (session_status()) {
             print "<td>$registro[9]</td>";
             print "<td>$registro[10]</td>";
             print "<td>$registro[11]</td>";
-            print "<td><a href='../CRUD/eliminar.php?codigo=$registro[0]'>Eliminar</a>";
-            print "<a href='../CRUD/alta.php?'>Añadir</a>";
-            //Al acceder al enlace podemos sacar el id del usuario facilmente
-            print "<a href='../CRUD/modificar.php?codigo=$registro[0]'>Modificar</a></td></tr>";
+            print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a></button>  ";
+                print "<button class='btn btn-primary btn-animado' style='background-color:green;'><a style='color:black;text-decoration:none;' href='/CRUDUser/añadirUsuario.php?'>Añadir</a></button>";
+                //Al acceder al enlace podemos sacar el id del usuario facilmente
+                print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
         }
         print "</table>";
         print "<a href='../dashboard.php' style='text-align:center;'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;''></i></a>";

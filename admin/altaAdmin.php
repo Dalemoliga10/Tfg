@@ -1,7 +1,12 @@
 <?php
 include "../headerDashboard.php";
 ?>
-
+<style>
+    form{
+        background-color: #3E5F8A;
+        color: #FFD700;
+    }
+</style>
 <div class="container my-5">
     <div class="row">
         <div class="col text-center">
