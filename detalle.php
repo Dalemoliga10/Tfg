@@ -123,6 +123,11 @@ while ($registro = mysqli_fetch_row($registros)) {
                         <div class="container d-flex mt-auto">
                             <a href="comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <a href="guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <?php 
+                            if(@$_SESSION["rol"]== "admin"){?>
+                                <a href="admin/newLink.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-link bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <?php 
+                            } ?>
                         </div>
                     <?php } ?>
                 </div>
