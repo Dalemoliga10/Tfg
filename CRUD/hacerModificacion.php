@@ -224,9 +224,12 @@ if ($_POST['imagenes']== "true") {
 if ($_POST['imagenes'] == "true") {
     $modificar = "UPDATE juegos SET nombre = '$nombre', descripcion = '$descripcion', descripcion_corta = '$descripcionCorta', foto1 = '$nombreArchivo', foto2 = '$nombreArchivo2', foto3 = '$nombreArchivo3', paginaOficial = '$pagOficial', etiqueta1 = '$etiqueta1', etiqueta2 = '$etiqueta2', etiqueta3 = '$etiqueta3' WHERE id = '$idModificar'";
     mysqli_query($conexion, $modificar);
+    header("Location:../dashboard.php");
+
 } else {
     $modificar = "UPDATE juegos SET nombre = '$nombre', descripcion = '$descripcion', descripcion_corta = '$descripcionCorta', paginaOficial = '$pagOficial', etiqueta1 = '$etiqueta1', etiqueta2 = '$etiqueta2', etiqueta3 = '$etiqueta3' WHERE id = '$idModificar'";
     mysqli_query($conexion, $modificar);
+    header("Location:../dashboard.php");
 }
 
 

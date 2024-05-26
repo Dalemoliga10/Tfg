@@ -91,5 +91,5 @@ if (session_status()) {
 
 
 <?php
-include "footer.php";
+include "../footer.php";
 ?>
