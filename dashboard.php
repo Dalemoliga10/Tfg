@@ -77,14 +77,21 @@ if ($_SESSION["rol"] == "admin") { ?>
         <div class="container text-center">
             <h1 style="margin-bottom: 50px;">Bienvenido al dashboard <?php echo $_SESSION["rol"] . " " . $_SESSION["nombre"] ?></h1>
             <div class="row mt-3" style="background-color:#3E5F8A;color:#CFB53B;">
-                <div class="col-md-6 border p-3">
+                <div class="col-md-4 border p-3">
                     <div onclick="window.location.href='user/listadoFavoritos.php';" style="text-decoration:none; cursor:pointer;">
                         Ver tu lista de favoritos
                         <br>
                         <i class="bi bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i>
                     </div>
                 </div>
-                <div class="col-md-6 border p-3">
+                <div class="col-md-4 border p-3">
+                    <div onclick="window.location.href='user/sugerirJuego.php';" style="text-decoration:none; cursor:pointer;">
+                        Sugerir un juego
+                        <br>
+                        <i class="bi bi-controller bi-5x py-3" style="font-size: 5.25rem;"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 border p-3">
                     <div onclick="window.location.href='user/modificarUsuario.php';" style="text-decoration:none; cursor:pointer;">
                         Cambiar datos de tu usuario
                         <br>
