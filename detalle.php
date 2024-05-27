@@ -114,7 +114,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                 <div class="col-lg-4 d-flex flex-column">
                     <div class="container" style="width: 100%;">
                         <!-- Evito que se salga el texto -->
-                        <p style="word-wrap: break-word;"><?php echo $registro[2] ?> aaaaaaaaaaaaaaaa</p>
+                        <p style="word-wrap: break-word;"><?php echo $registro[2] ?></p>
                     </div>
                     <div>
                         <h2>Valoración</h2>

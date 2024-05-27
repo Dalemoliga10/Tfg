@@ -1,4 +1,6 @@
-<?php include "conexion.php" ?>
+<?php include "conexion.php" ;
+include ("headerDashboard.php");
+?>
 
 <?php
 mysqli_select_db($conexion, "bdfinal");
@@ -30,7 +32,9 @@ while ($registro = mysqli_fetch_row($registros)){
 
         header('Location: dashboard.php');
     } else {
-        echo "La contraseña no coincide.";
+        echo "<div style='tex-align:center;'>La contraseña no coincide.";
+        echo '<a href="formInicioSesion.php?" style="color:black;"><br>
+            <i class="bi-arrow-return-left" style="font-size: 5.25rem;"></i></a></div>';
     }    
 }
 ?>

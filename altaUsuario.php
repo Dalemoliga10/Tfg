@@ -28,7 +28,7 @@ include "header.php";
                             </div>
                             <div class="mb-3">
                                 <label for="correo" class="form-label">correo</label>
-                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Introduce contraseña" required />
+                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Introduce correo" required />
                             </div>
                             <div class="mb-3">
                                 <label for="apellidos" class="form-label">Contraseña</label>
