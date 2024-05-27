@@ -1,10 +1,15 @@
 <?php
+include_once("../conexion.php");
+mysqli_select_db($conexion, "bdfinal");
 include "../headerDashboard.php";
-
+$seleccion = "SELECT * FROM sugerencias_juegos WHERE id_sugerencia = $_GET[codigo]";
+$registros = mysqli_query($conexion, $seleccion);
 
 if (session_status()) {
     session_start();
-    if ($_SESSION["rol"] == "admin") { //SOlo accesible si eres admin?>
+    if ($_SESSION["rol"] == "admin") { //Solo accesible si eres admin
+        while ($registro = mysqli_fetch_row($registros)) { echo $registro[1];?>
+
         <div class="container my-5">
             <div class="row">
                 <div class="col text-center">
@@ -23,11 +28,11 @@ if (session_status()) {
                                 <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
                                     <div class="mb-3">
                                         <label for="nombre" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduce nombre" required />
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduce nombre" required value="<?php echo $registro[1]?>" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="descripcion" class="form-label">Descripción</label>
-                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="3" ><?php echo $registro[2]?></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="descripcionCorta" class="form-label">Descripción Corta</label>
@@ -47,19 +52,19 @@ if (session_status()) {
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace PC</label>
-                                        <input type="text" class="form-control" name="enlacePC" id="enlacePC"/>
+                                        <input type="text" class="form-control" name="enlacePC" id="enlacePC" value="<?php echo $registro[3]?>"/>
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace movil</label>
-                                        <input type="text" class="form-control" name="enlaceMovil" id="enlaceMovil"/>
+                                        <input type="text" class="form-control" name="enlaceMovil" id="enlaceMovil" value="<?php echo $registro[4]?>"/>
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace consola</label>
-                                        <input type="text" class="form-control" name="enlaceConsola" id="enlaceConsola"/>
+                                        <input type="text" class="form-control" name="enlaceConsola" id="enlaceConsola" value="<?php echo $registro[5]?>"/>
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Pagina Oficial</label>
-                                        <input type="text" class="form-control" name="pagOficial" id="pagOficial" />
+                                        <input type="text" class="form-control" name="pagOficial" id="pagOficial" value="<?php echo $registro[6]?>"/>
                                     </div>
                                     <div class="mb-3">
                                         <label for="etiqueta1" class="form-label">Etiqueta 1</label>
@@ -89,6 +94,7 @@ if (session_status()) {
 
 
 <?php
+        }
     } else {
         echo "No tienes permisos para acceder aqui";
         echo "<a href='../dashboard.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";

@@ -35,25 +35,32 @@ if ($_SESSION["rol"] == "admin") { ?>
             <h1 style="margin-bottom: 50px;">Bienvenido al dashboard <?php echo $_SESSION["rol"] . " " . $_SESSION["nombre"] ?></h1>
             <div class="container" style="text-align:center; margin-top:15px;">
                 <div class="row" style="background-color:#3E5F8A;color:#CFB53B;">
-                    <div class="col-md-4 border p-3">
+                    <div class="col-md-3 border p-3">
                         <div onclick="window.location.href='admin/listadoJuegos.php';" style="text-decoration:none; cursor:pointer;">
                             Administración de juegos
                             <br>
                             <i class="bi bi-joystick py-3" style="font-size: 5.25rem;"></i>
                         </div>
                     </div>
-                    <div class="col-md-4 border p-3">
+                    <div class="col-md-3 border p-3">
                         <div onclick="window.location.href='admin/listadoUsuarios.php';" style="text-decoration:none; cursor:pointer;">
                             Administración de usuarios
                             <br>
                             <i class="bi bi-person-fill py-3" style="font-size: 5.25rem;"></i>
                         </div>
                     </div>
-                    <div class="col-md-4 border p-3">
+                    <div class="col-md-3 border p-3">
                         <div onclick="window.location.href='admin/altaAdmin.php';" style="text-decoration:none; cursor:pointer;">
                             Crear administrador
                             <br>
                             <i class="bi bi-journal-plus bi-5x py-3" style="font-size: 5.25rem;"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3 border p-3">
+                        <div onclick="window.location.href='admin/listaSugerencias.php';" style="text-decoration:none; cursor:pointer;">
+                            Administración de sugerencias
+                            <br>
+                            <i class="bi bi-joystick py-3" style="font-size: 5.25rem;"></i>
                         </div>
                     </div>
                 </div>

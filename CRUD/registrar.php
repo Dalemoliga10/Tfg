@@ -221,5 +221,31 @@ if (isset($_FILES['imagen3'])) {
 $insertar = "INSERT juegos (nombre,descripcion,descripcion_corta, foto1, foto2, foto3,paginaOficial, etiqueta1,etiqueta2,etiqueta3) VALUES ('$nombre','$descripcion', '$descripcionCorta', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3', '$pagOficial', '$etiqueta1', '$etiqueta2','$etiqueta3')";
 mysqli_query($conexion, $insertar);
 
-header("Location:../index.php");
+//Despues de insertar el juego, inserto los enlaces que tenga
+$selectJuegoCreado = "SELECT * FROM juegos WHERE nombre = '$nombre'";
+$registros = mysqli_query($conexion, $selectJuegoCreado);    
+while($registro = mysqli_fetch_row($registros)){
+    $idJuegoCreado = $registro[0];
+}
+
+if($_POST["enlacePC"] != ''){
+    echo "hola";
+    $insertarEnlace = "INSERT INTO enlaces_pc (enlace, id_juego) VALUES ('$_POST[enlacePC]', '$idJuegoCreado')";
+    mysqli_query($conexion, $insertarEnlace);
+}
+
+if($_POST["enlaceConsola"] != ''){
+    echo "hola";
+
+    $insertarEnlace = "INSERT INTO enlaces_consola (enlace, id_juego) VALUES ('$_POST[enlaceConsola]', '$idJuegoCreado')";
+    mysqli_query($conexion, $insertarEnlace);
+}
+
+if($_POST["enlaceMovil"] != ''){
+    echo "hola";
+    $insertarEnlace = "INSERT INTO enlaces_movil (enlace, id_juego) VALUES ('$_POST[enlaceMovil]', '$idJuegoCreado')";
+    mysqli_query($conexion, $insertarEnlace);
+}
+
+header("Location:../dashboard.php");
 ?>
