@@ -85,7 +85,7 @@ if ($_SESSION["rol"] == "admin") { ?>
                     </div>
                 </div>
                 <div class="col-md-6 border p-3">
-                    <div onclick="window.location.href='admin/modificarUser.php';" style="text-decoration:none; cursor:pointer;">
+                    <div onclick="window.location.href='user/modificarUsuario.php';" style="text-decoration:none; cursor:pointer;">
                         Cambiar datos de tu usuario
                         <br>
                         <i class="bi bi-person-fill bi-5x py-3" style="font-size: 5.25rem;"></i>
