@@ -81,7 +81,7 @@ $contador = 0;
     <form action="listado.php" id="miniform" name="miniform" method="get">
         <div class="container-fluid d-flex align-items-center" style="height: 100px;">
             <!-- Hay que poner la imagen para que no moleste al form -->
-            <img src="imagenes/logo gameDex.png" style="width:10%;">
+            <a href="index.php" style="width:7%;"><img src="imagenes/logo gameDex.png" style="width:100%;margin-left:20px;"></a>
             <div class="container" style="width: 60%;">
                 <div class="d-flex align-items-center justify-content-center">
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Buscar" style="width: 90%;">
