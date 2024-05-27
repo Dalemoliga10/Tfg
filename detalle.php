@@ -36,23 +36,29 @@ while ($registro = mysqli_fetch_row($registros)) {
         .star-rating {
             white-space: nowrap;
             display: inline-block;
-            width: 10em; /* tamaño estrellas */
-            height: 2em; /* tamaño estrellas */
+            width: 10em;
+            /* tamaño estrellas */
+            height: 2em;
+            /* tamaño estrellas */
             overflow: hidden;
             position: relative;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="gray" d="M287.9 17.8L354 150.2 497.9 171.5C514.4 173.9 520.1 194.7 507 204.9L402 288.1 423.6 429.8C425.9 445.3 411.8 456.6 398.3 451.7L288 406.1 177.7 451.7C164.2 456.6 150.1 445.3 152.4 429.8L174 288.1 68.96 204.9C55.91 194.7 61.6 173.9 78.09 171.5L222 150.2 287.9 17.8z"/></svg>') repeat-x;
-            background-size: 2em 2em; /* Tamaño de cada estrella */
+            background-size: 2em 2em;
+            /* Tamaño de cada estrella */
         }
+
         .star-rating .filled {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="gold" d="M287.9 17.8L354 150.2 497.9 171.5C514.4 173.9 520.1 194.7 507 204.9L402 288.1 423.6 429.8C425.9 445.3 411.8 456.6 398.3 451.7L288 406.1 177.7 451.7C164.2 456.6 150.1 445.3 152.4 429.8L174 288.1 68.96 204.9C55.91 194.7 61.6 173.9 78.09 171.5L222 150.2 287.9 17.8z"/></svg>') repeat-x;
-            background-size: 2em 2em; /* Tamaño de cada estrella */
+            background-size: 2em 2em;
+            /* Tamaño de cada estrella */
         }
     </style>
-    <script> //Rellena las estrellas dependiendo de la valoracion
+    <script>
+        //Rellena las estrellas dependiendo de la valoracion
         function setRating(rating) {
             const percentage = (rating / 5) * 100;
             document.querySelector('.star-rating .filled').style.width = `${percentage}%`;
@@ -115,7 +121,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         <div class="star-rating">
                             <div class="filled"></div><!--Pinta el color-->
                             <script>
-                                setRating(<?php echo $registro[4]?>)
+                                setRating(<?php echo $registro[4] ?>)
                             </script>
                         </div>
                     </div>
@@ -123,10 +129,10 @@ while ($registro = mysqli_fetch_row($registros)) {
                         <div class="container d-flex mt-auto">
                             <a href="comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <a href="guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
-                            <?php 
-                            if(@$_SESSION["rol"]== "admin"){?>
+                            <?php
+                            if (@$_SESSION["rol"] == "admin") { ?>
                                 <a href="admin/newLink.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-link bi-5x py-3" style="font-size: 5.25rem;"></i></a>
-                            <?php 
+                            <?php
                             } ?>
                         </div>
                     <?php } ?>
@@ -203,7 +209,7 @@ while ($registro = mysqli_fetch_row($registros)) {
         $registros = mysqli_query($conexion, $seleccionarComentarios);
         while ($registro = mysqli_fetch_row($registros)) { ?>
             <div class="card mb-1">
-                <div class="card-body flex-column flex-md-row">
+                <div class="card-body flex-column flex-md-row" style="text-align: center;">
                     <?php
                     $UsuarioComenta = "SELECT nombre, apellidos FROM usuarios WHERE id_usuario = '$registro[1]'";
                     $registrosUsuario = mysqli_query($conexion, $UsuarioComenta);
@@ -214,22 +220,23 @@ while ($registro = mysqli_fetch_row($registros)) {
                     }
                     ?>
                     <h3>Reseña de <?php echo $nombre . " " . $apellidos ?></h3>
-
                     <p><?php echo $registro[4] ?></p>
-                    <div>
-                        <h2>Valoracion</h2>
-                        <p><?php echo $registro[3]?></p>
-                        <!--<div class="star-rating">
-                            <div class="filled"></div>
-                            <script>
-                                setRating(<?php echo $registro[3]?>)
-                            </script>
-                        </div>-->
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div class="text-center flex-grow-1">
+                            <h2>Valoracion</h2>
+                            <p class="mb-0"><?php echo $registro[3]; ?></p>
+                        </div>
+                        <?php if (@$_SESSION["id"] == $registro[1] || @$_SESSION["rol"] == "admin") { ?>
+                            <div style="margin-left: -58px;">
+                                <a href="admin/eliminarComentario.php?user=<?php echo $registro[1]; ?>&idComent=<?php echo $registro[0]; ?>&juego=<?php echo $registro[2]?>" style="color:red;">
+                                    <i class="bi bi-trash" style="font-size: 5.25rem;"></i>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
+
                 </div>
             </div>
-
-
         <?php
         }
 
