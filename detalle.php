@@ -117,7 +117,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         <p style="word-wrap: break-word;"><?php echo $registro[2] ?> aaaaaaaaaaaaaaaa</p>
                     </div>
                     <div>
-                        <h2>Valoracion</h2>
+                        <h2>Valoración</h2>
                         <div class="star-rating">
                             <div class="filled"></div><!--Pinta el color-->
                             <script>
@@ -173,7 +173,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                     ?>
                 </div>
                 <div class="col-4">
-                    <h2>Movil</h2>
+                    <h2>Móvil</h2>
                     <?php
                     $busquedaMov = "SELECT enlace from enlaces_movil WHERE id_juego = $registro[0]";
                     $registrosMov = mysqli_query($conexion, $busquedaMov);
@@ -189,7 +189,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                 </div>
             </div>
 
-            <h1 style="text-align: center;margin-top:60px;">Pagina oficial</h1>
+            <h1 style="text-align: center;margin-top:60px;">Página oficial</h1>
             <div class="container" style="text-align: center;margin-bottom: 40px;">
                 <?php if (empty($registro[8])) {
                     print("Pagina oficial no existente");
@@ -223,7 +223,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                     <p><?php echo $registro[4] ?></p>
                     <div class="d-flex justify-content-between align-items-center w-100">
                         <div class="text-center flex-grow-1">
-                            <h2>Valoracion</h2>
+                            <h2>Valoración</h2>
                             <p class="mb-0"><?php echo $registro[3]; ?></p>
                         </div>
                         <?php if (@$_SESSION["id"] == $registro[1] || @$_SESSION["rol"] == "admin") { ?>
