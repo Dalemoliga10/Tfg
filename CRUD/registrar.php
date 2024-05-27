@@ -1,4 +1,4 @@
-<?php include "conexion.php" ?>
+<?php include "../conexion.php" ?>
 
 <?php
 //RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
@@ -221,5 +221,5 @@ if (isset($_FILES['imagen3'])) {
 $insertar = "INSERT juegos (nombre,descripcion,descripcion_corta, foto1, foto2, foto3,paginaOficial, etiqueta1,etiqueta2,etiqueta3) VALUES ('$nombre','$descripcion', '$descripcionCorta', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3', '$pagOficial', '$etiqueta1', '$etiqueta2','$etiqueta3')";
 mysqli_query($conexion, $insertar);
 
-header("Location:index.php");
+header("Location:../index.php");
 ?>

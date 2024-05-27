@@ -14,7 +14,7 @@
 </style>
 
 <body>
-    <p class="d-flex justify-content-center">Tus juegos favoritos</p>
+    <h1 class="d-flex justify-content-center">Tus juegos favoritos</h1>
     <?php
     session_start();
     include "../headerDashboard.php";

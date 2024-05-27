@@ -11,9 +11,10 @@ include "../headerDashboard.php";
         $registros = mysqli_query($conexion, $consultar);
         while ($registro = mysqli_fetch_row($registros)) { ?>
             <div class="row mt-3 justify-content-md-center">
+                <h1 style="text-align: center;">Modificar</h1>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header" style="text-align: center;">
                             Modificar:
                         </div>
                         <form class="p-4" method="POST" action="hacerModificacion.php" enctype="multipart/form-data" id="FORMULARIO">
@@ -29,7 +30,7 @@ include "../headerDashboard.php";
                                 <input type="text" class="form-control" name="apellidos" id="apellidos" value="<?php echo $registro[2] ?>" required />
                             </div>
                             <div class="d-grid">
-                                <input type="submit" class="btn btn-primary" value="Modificar usuario">
+                                <input type="submit" class="btn btn-primary" value="Modificar">
                             </div>
                             <!-- <div class="mb-3">
                                 <label for="apellidos" class="form-label">contraseña</label>

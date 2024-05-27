@@ -7,7 +7,28 @@ if (session_status()){
     if($_SESSION["rol"] == "admin"){
         //Codigo
         include_once("../conexion.php");
+        mysqli_select_db($conexion, "bdfinal");
         $idElimina = $_GET["codigo"];
+
+        //Elimina comentarios del juego
+        $eliminar = "DELETE FROM comentarios WHERE id_juego = $idElimina";
+
+        mysqli_query($conexion, $eliminar);
+
+        //Elimina enlaces del juego
+        $eliminar = "DELETE FROM enlaces_consola WHERE id_juego = $idElimina";
+
+        mysqli_query($conexion, $eliminar);
+
+        $eliminar = "DELETE FROM enlaces_pc WHERE id_juego = $idElimina";
+
+        mysqli_query($conexion, $eliminar);
+
+        $eliminar = "DELETE FROM enlaces_movil WHERE id_juego = $idElimina";
+
+        mysqli_query($conexion, $eliminar);
+
+        //Elimina el juego
         $eliminar = "DELETE FROM juegos WHERE id = $idElimina";
 
         $eliminado = mysqli_query($conexion, $eliminar);
