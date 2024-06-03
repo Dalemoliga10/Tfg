@@ -103,6 +103,8 @@ if (session_status()) {
                             </div>
                         </form>
                     </div>
+                    <a href='../admin/listadoJuegos.php' style="text-align: center;"><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>
+
                 </div>
             </div>
 

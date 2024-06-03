@@ -42,9 +42,9 @@ if ($correo == $_SESSION["correo"]) {
     $insertar = "UPDATE juegos SET valoracion = $resultado WHERE id = '$idJuego'";
 
     mysqli_query($conexion, $insertar);
-    header("Location:detalle.php?id_juego=" . $idJuego);
+    header("Location:detalle.php?idJuego=" . $idJuego);
 } else {
-    header("Location:detalle.php?id_juego=" . $idJuego);
+    header("Location:detalle.php?idJuego=" . $idJuego);
 }
 
 

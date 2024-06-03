@@ -20,7 +20,7 @@ if ($_SESSION["rol"] == "user"){
     $registrosUser = mysqli_query($conexion, $seleccionFavoritosUser);
     while ($registro = mysqli_fetch_row($registrosUser)) {
         if ($idJuego == $registro[0]){
-            header("Location:detalle.php?id_juego=".$idJuego);
+            header("Location:detalle.php?idJuego=".$idJuego);
             break;
         }
     }
@@ -28,9 +28,9 @@ if ($_SESSION["rol"] == "user"){
     $insertar = "INSERT INTO favoritos (id_usuario, id_juego) VALUES ('$idUser', '$idJuego')";
     $resultado = mysqli_query($conexion, $insertar);
     
-    header("Location:detalle.php?id_juego=".$idJuego);
+    header("Location:detalle.php?idJuego=".$idJuego);
 }else{
-    header("Location:detalle.php?id_juego=".$idJuego);
+    header("Location:detalle.php?idJuego=".$idJuego);
 }
 
 ?>

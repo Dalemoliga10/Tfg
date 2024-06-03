@@ -6,7 +6,7 @@ if (empty($juego)) {
     $juego = $_GET['id_juego'];
 }
 
-include("header.php");
+include("headerRewrite.php");
 $busqueda = 'SELECT * FROM juegos WHERE id =' . $juego;
 $registros = mysqli_query($conexion, $busqueda);
 
@@ -14,6 +14,7 @@ while ($registro = mysqli_fetch_row($registros)) {
 ?>
 
     <head>
+        <link rel="shortcut icon" href="imagenes/icono.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo "Detalle de " . $registro[1] ?></title>
@@ -82,15 +83,15 @@ while ($registro = mysqli_fetch_row($registros)) {
 
                         <div class="carousel-inner" role="listbox">
                             <div class="item" class="carousel-content">
-                                <?php echo '<img src="imagenes/' . $registro[5] . '">'; ?>
+                                <?php echo '<img src="../imagenes/' . $registro[5] . '">'; ?>
                             </div>
 
                             <div class="item active" class="carousel-content">
-                                <?php echo '<img src="imagenes/' . $registro[6] . '">'; ?>
+                                <?php echo '<img src="../imagenes/' . $registro[6] . '">'; ?>
                             </div>
 
                             <div class="item" class="carousel-content">
-                                <?php echo '<img src="imagenes/' . $registro[7] . '">'; ?>
+                                <?php echo '<img src="../imagenes/' . $registro[7] . '">'; ?>
                             </div>
                             <!-- <div class="item">
                                 <img src="https://cdn.dribbble.com/users/324248/screenshots/3978513/planet2_800.jpg" alt="diseno" width="600" height="424">
@@ -127,11 +128,11 @@ while ($registro = mysqli_fetch_row($registros)) {
                     </div>
                     <?php if (@$_SESSION["rol"]) { ?>
                         <div class="container d-flex mt-auto">
-                            <a href="comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
-                            <a href="guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <a href="../comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                            <a href="../guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <?php
                             if (@$_SESSION["rol"] == "admin") { ?>
-                                <a href="admin/newLink.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-link bi-5x py-3" style="font-size: 5.25rem;"></i></a>
+                                <a href="../admin/newLink.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-link bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <?php
                             } ?>
                         </div>
@@ -228,7 +229,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                         </div>
                         <?php if (@$_SESSION["id"] == $registro[1] || @$_SESSION["rol"] == "admin") { ?>
                             <div style="margin-left: -58px;">
-                                <a href="admin/eliminarComentario.php?user=<?php echo $registro[1]; ?>&idComent=<?php echo $registro[0]; ?>&juego=<?php echo $registro[2]?>" style="color:red;">
+                                <a href="../admin/eliminarComentario.php?user=<?php echo $registro[1]; ?>&idComent=<?php echo $registro[0]; ?>&juego=<?php echo $registro[2]?>" style="color:red;">
                                     <i class="bi bi-trash" style="font-size: 5.25rem;"></i>
                                 </a>
                             </div>

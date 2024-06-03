@@ -1,0 +1,19 @@
+#Deshabilita el intento que hace por defecto, si no pones esto da conflicto y no funciona
+Options -Indexes -Multiviews
+
+RewriteEngine On
+RewriteBase /proyectoFinal
+
+# Redirigir solicitudes con detalle.php?idJuego=<cualquier_valor> a una URL amigable
+RewriteCond %{THE_REQUEST} /proyectoFinal/detalle\.php\?idJuego=([0-9]+) [NC]
+RewriteRule ^ detalle/%1? [R=301,L]
+
+# Reescribir la URL amigable de detalle/<cualquier_valor> a detalle.php?idJuego=<cualquier_valor>
+RewriteRule ^detalle/([0-9]+)$ detalle.php?idJuego=$1 [L]
+
+
+RewriteCond %{THE_REQUEST} /proyectoFinal/comentar\.php\?juego=([0-9]+) [NC]
+RewriteRule ^ comentar/%1? [R=301,L]
+
+
+RewriteRule ^comentar/([0-9]+)$ comentar.php?juego=$1 [L]

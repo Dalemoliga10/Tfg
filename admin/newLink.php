@@ -51,7 +51,7 @@ if (session_status()) {
                             </div>
                         </div>
                         <!--otro icono curioso de back: bi bi-backspace -->
-                        <?php echo "<a href='../detalle.php?id_juego=$_GET[juego]'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";?>
+                        <?php echo "<a href='../detalle.php?idJuego=$_GET[juego]'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";?>
                     </div>
                 </div>
             </div>

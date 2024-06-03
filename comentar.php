@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "headerRewrite.php";
 $_SESSION["juego"] = $_GET["juego"];
 ?>
 
@@ -18,7 +18,7 @@ $_SESSION["juego"] = $_GET["juego"];
                             Hacer conentario:
                         </div>
                         <!-- MULTIPART/FORMDATA para incluir ficheros -->
-                        <form class="p-4" method="POST" action="hacerComentario.php" enctype="multipart/form-data">
+                        <form class="p-4" method="POST" action="../hacerComentario.php" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="correo" class="form-label">correo</label>
                                 <input type="text" class="form-control" name="correo" id="correo" placeholder="Introduce contraseña" value= <?php echo $_SESSION["correo"]?>  required />

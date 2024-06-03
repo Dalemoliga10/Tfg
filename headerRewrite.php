@@ -77,11 +77,11 @@ $contador = 0;
     }
 </style>
 <header>
-        <link rel="shortcut icon" href="imagenes/icono.ico">    
-    <form action="listado.php" id="miniform" name="miniform" method="get">
+    <link rel="shortcut icon" href="../imagenes/icono.ico">    
+    <form action="../listado.php" id="miniform" name="miniform" method="get">
         <div class="container-fluid d-flex align-items-center" style="height: 100px;">
             <!-- Hay que poner la imagen para que no moleste al form -->
-            <a href="index.php" style="width:7%;"><img src="imagenes/logo gameDex.png" style="width:100%;margin-left:20px;"></a>
+            <a href="../index.php" style="width:7%;"><img src="../imagenes/logo gameDex.png" style="width:100%;margin-left:20px;"></a>
             <div class="container" style="width: 60%;">
                 <div class="d-flex align-items-center justify-content-center">
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Buscar" style="width: 90%;">
@@ -94,13 +94,13 @@ $contador = 0;
                 if (@$_SESSION) {
                 ?>
                     <p style="margin-bottom: -5px;">Sesion iniciada como :<br> <?php echo $_SESSION['rol'] . "  " . $_SESSION['nombre'] ?></p>
-                    <div><a href="dashboard.php">Ir al dashboard</a> <a href="cierreSesion.php">Cerrar sesion</a></div>
+                    <div><a href="../dashboard.php">Ir al dashboard</a> <a href="../cierreSesion.php">Cerrar sesion</a></div>
 
                 <?php
                 } else {
                 ?>
                     <div><p> No has iniciado sesion</p>
-                        <a href="formInicioSesion.php">Iniciar sesion</a>
+                        <a href="../formInicioSesion.php">Iniciar sesion</a>
                     </div>
                 <?php
                 }

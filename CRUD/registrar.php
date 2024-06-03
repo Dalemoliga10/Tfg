@@ -229,20 +229,17 @@ while($registro = mysqli_fetch_row($registros)){
 }
 
 if($_POST["enlacePC"] != ''){
-    echo "hola";
     $insertarEnlace = "INSERT INTO enlaces_pc (enlace, id_juego) VALUES ('$_POST[enlacePC]', '$idJuegoCreado')";
     mysqli_query($conexion, $insertarEnlace);
 }
 
 if($_POST["enlaceConsola"] != ''){
-    echo "hola";
 
     $insertarEnlace = "INSERT INTO enlaces_consola (enlace, id_juego) VALUES ('$_POST[enlaceConsola]', '$idJuegoCreado')";
     mysqli_query($conexion, $insertarEnlace);
 }
 
 if($_POST["enlaceMovil"] != ''){
-    echo "hola";
     $insertarEnlace = "INSERT INTO enlaces_movil (enlace, id_juego) VALUES ('$_POST[enlaceMovil]', '$idJuegoCreado')";
     mysqli_query($conexion, $insertarEnlace);
 }

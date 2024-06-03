@@ -7,7 +7,7 @@ if (session_status()) {
         $eliminar = "DELETE FROM comentarios WHERE id_comentario = $_GET[idComent]";
         mysqli_query($conexion, $eliminar);
 
-        header("Location:../detalle.php?id_juego=" . $_GET["juego"]);
+        header("Location:../detalle.php?idJuego=" . $_GET["juego"]);
     } else {
         echo "No tienes permisos para acceder aqui";
         echo "<a href='../index.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
