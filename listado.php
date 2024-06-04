@@ -64,8 +64,7 @@
     //     $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
     // }
     // Seleccionamos la Base de Datos
-    mysqli_select_db($conexion, "bdfinal");
-
+    
     
 
     $registros = mysqli_query($conexion, $consultar);?>

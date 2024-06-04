@@ -5,8 +5,7 @@ include "../headerDashboard.php";
         <?php
         $idModificar = $_SESSION["id"];
         include_once('../conexion.php');
-        mysqli_select_db($conexion, "bdfinal");
-        $consultar = "SELECT * FROM usuarios WHERE id_usuario = $idModificar";
+                $consultar = "SELECT * FROM usuarios WHERE id_usuario = $idModificar";
 
         $registros = mysqli_query($conexion, $consultar);
         while ($registro = mysqli_fetch_row($registros)) { ?>

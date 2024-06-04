@@ -1,6 +1,5 @@
 <?php
 include_once("../conexion.php");
-mysqli_select_db($conexion, "bdfinal");
 include "../headerDashboard.php";
 $seleccion = "SELECT * FROM sugerencias_juegos WHERE id_sugerencia = $_GET[codigo]";
 $registros = mysqli_query($conexion, $seleccion);

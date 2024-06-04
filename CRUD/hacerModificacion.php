@@ -2,7 +2,6 @@
 
 <?php
 //RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
-mysqli_select_db($conexion, "bdfinal");
 
 var_dump($_POST);
 

@@ -2,7 +2,6 @@
 
 <?php
 session_start();
-mysqli_select_db($conexion, "bdfinal");
 
 $correo = $_POST["correo"];
 $comentario = $_POST["comentario"];

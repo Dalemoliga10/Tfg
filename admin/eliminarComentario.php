@@ -3,8 +3,7 @@ if (session_status()) {
     session_start();
     if ($_SESSION["id"] == $_GET["user"] or $_SESSION["rol"] == "admin") {
         include_once("../conexion.php");
-        mysqli_select_db($conexion, "bdfinal");
-        $eliminar = "DELETE FROM comentarios WHERE id_comentario = $_GET[idComent]";
+                $eliminar = "DELETE FROM comentarios WHERE id_comentario = $_GET[idComent]";
         mysqli_query($conexion, $eliminar);
 
         header("Location:../detalle.php?idJuego=" . $_GET["juego"]);

@@ -16,8 +16,7 @@ if (session_status()) {
         // Incluir el archivo de conexión
         require_once('../conexion.php');
         
-        mysqli_select_db($conexion, "bdfinal");
-
+        
         print "<h1 style=text-align:center;>Informacion de Sugerencias</h1>";
 
         $consultar = "SELECT * FROM sugerencias_juegos";

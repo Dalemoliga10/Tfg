@@ -42,8 +42,7 @@ if (session_status()) {
     </style>";
         // Incluir el archivo de conexión
         require_once('../conexion.php');
-        mysqli_select_db($conexion, "bdfinal");
-        print "<h1>Informacion de usuarios</h1>";
+                print "<h1>Informacion de usuarios</h1>";
 
         $consultar = "SELECT * FROM usuarios";
 

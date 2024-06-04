@@ -7,8 +7,7 @@ if (session_status()){
     if($_SESSION["rol"] == "admin"){
         //Codigo
         include_once("../conexion.php");
-        mysqli_select_db($conexion, "bdfinal");
-        $idElimina = $_GET["codigo"];
+                $idElimina = $_GET["codigo"];
 
         //Elimina comentarios del juego
         $eliminar = "DELETE FROM comentarios WHERE id_juego = $idElimina";

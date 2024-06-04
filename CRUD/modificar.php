@@ -39,8 +39,7 @@ if (session_status()) {
         <?php
 
         include_once('../conexion.php');
-        mysqli_select_db($conexion, "bdfinal");
-        $idModificar = $_GET["codigo"];
+                $idModificar = $_GET["codigo"];
         $consultar = "SELECT * FROM juegos WHERE id = $idModificar";
 
         $registros = mysqli_query($conexion, $consultar);

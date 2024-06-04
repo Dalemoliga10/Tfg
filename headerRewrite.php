@@ -2,8 +2,6 @@
 
 require_once('conexion.php');
 
-mysqli_select_db($conexion, "bdfinal");
-
 $consultar = "SELECT nombre FROM etiquetas";
 
 $registros = mysqli_query($conexion, $consultar);

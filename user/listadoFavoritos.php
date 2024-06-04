@@ -19,8 +19,7 @@
     session_start();
     include "../headerDashboard.php";
     require_once("../conexion.php");
-    mysqli_select_db($conexion, "bdfinal");
-    $id = $_SESSION["id"];
+        $id = $_SESSION["id"];
 
     $selectedOptions = array();
 

@@ -1,7 +1,6 @@
 <?php include "../conexion.php" ?>
 
 <?php
-mysqli_select_db($conexion, "bdfinal");
 
 $nombre = $_POST["nombre"];
 $apellidos = $_POST["apellidos"];

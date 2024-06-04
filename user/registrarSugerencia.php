@@ -3,7 +3,6 @@ include ("../headerDashboard.php");
 ?>
 
 <?php
-mysqli_select_db($conexion, "bdfinal");
 session_start();
 
 $nombre = $_POST["nombre"];

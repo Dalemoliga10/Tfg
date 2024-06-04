@@ -6,8 +6,7 @@ if (session_status()){
     session_start();
     if($_SESSION["rol"] == "admin"){
         include_once("../conexion.php");
-        mysqli_select_db($conexion, "bdfinal");
-        $idElimina = $_GET["codigo"];
+                $idElimina = $_GET["codigo"];
         $consultar = "SELECT * FROM juegos WHERE id = $idElimina";
 
         $registros = mysqli_query($conexion, $consultar);
