@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+//Formulario para crear un usuario
 ?>
 
 <div class="container my-5">

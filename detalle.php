@@ -21,6 +21,7 @@ while ($registro = mysqli_fetch_row($registros)) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <style>
+        /*Carrousel*/ 
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {
             width: 100%;
@@ -67,7 +68,7 @@ while ($registro = mysqli_fetch_row($registros)) {
     <body>
         <h1 style="text-align: center;"><?php echo $registro[1] ?></h1>
         <div class="container-fluid" style="width: 85%;">
-
+            <!-- Parte carrousel -->
             <div class="row">
                 <div class="col-lg-8">
                     <div id="theCarousel" class="carousel slide" data-ride="carousel">
@@ -126,10 +127,12 @@ while ($registro = mysqli_fetch_row($registros)) {
                     </div>
                     <?php if (@$_SESSION["rol"]) { ?>
                         <div class="container d-flex mt-auto">
+                            <!-- Si tienes un rol, por ende estas logeado, se muestran opciones de comentar y guaran favoritos -->
                             <a href="../comentar.php?juego=<?php echo $registro[0] ?>"><i class="bi-chat-fill bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <a href="../guardarFavoritos.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-bookmark-star bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <?php
                             if (@$_SESSION["rol"] == "admin") { ?>
+                            <!-- Si eres admin, tambien se te añade la opcion de crearle un link al juego -->
                                 <a href="../admin/newLink.php?juego=<?php echo $registro[0] ?>&usuario=<?php echo $_SESSION["correo"] ?>"><i class="bi-link bi-5x py-3" style="font-size: 5.25rem;"></i></a>
                             <?php
                             } ?>

@@ -1,6 +1,7 @@
 <?php include "conexion.php" ?>
 
 <?php
+//Traigo sesion
 session_start();
 
 $correo = $_POST["correo"];
@@ -20,7 +21,7 @@ if ($correo == $_SESSION["correo"]) {
     $insertar = "INSERT INTO comentarios (id_usuario, id_juego, Comentario, valoracion) VALUES ('$idUser', '$idJuego', '$comentario', '$valoracion')";
     $resultado = mysqli_query($conexion, $insertar);
 
-    //Parte valoracion
+    //Parte valoracion, saca las valoraciones del juego y calcula la media
     $total = 0.0;
     $contador = 0;
     $verValoraciones = "SELECT valoracion FROM comentarios WHERE id_juego ='$idJuego'";

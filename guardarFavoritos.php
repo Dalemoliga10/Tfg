@@ -5,8 +5,9 @@ session_start();
 
 $correo = $_GET["usuario"];
 $idJuego = $_GET["juego"];
-
+//Los admins no tienen lista de favoritos, por endeno necesitan añadir favoritos
 if ($_SESSION["rol"] == "user"){
+    //Coge el id del usuario
     $verUser = "SELECT id_usuario FROM usuarios WHERE correo = '$correo'";
     $registros = mysqli_query($conexion, $verUser);
     
@@ -14,6 +15,8 @@ if ($_SESSION["rol"] == "user"){
         $idUser = $registro[0];
     }
     
+
+    //Comprueba que el usuario no tenga el juego ya añadido a su lista de favoritos
     $seleccionFavoritosUser = "SELECT id_juego FROM favoritos WHERE id_usuario = '$idUser'";
     
     $registrosUser = mysqli_query($conexion, $seleccionFavoritosUser);
@@ -24,6 +27,7 @@ if ($_SESSION["rol"] == "user"){
         }
     }
     
+    //En case de que no, añade el juego a su lista de favoritos
     $insertar = "INSERT INTO favoritos (id_usuario, id_juego) VALUES ('$idUser', '$idJuego')";
     $resultado = mysqli_query($conexion, $insertar);
     

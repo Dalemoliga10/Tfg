@@ -3,7 +3,7 @@ include 'header.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Index, nomuchomas que decir -->
 <head>
     <link rel="shortcut icon" href="imagenes/icono.ico">
     <meta charset="UTF-8">

@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+//Formulario de inicio de sesion
 ?>
 <body >
 <div class="container my-5">

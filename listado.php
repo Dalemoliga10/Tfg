@@ -44,7 +44,6 @@
         $selectedOptions[$i] = str_replace("_", " ", $selectedOptions[$i]);
     }
 
-    //echo sizeof($selectedOptions);
     //Con esto filtro por nombre y etiquetas solo si ha puesto
     $idEtiquetas = array();
     if(sizeof($selectedOptions)>0){
@@ -60,15 +59,8 @@
         
     }
     $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
-    //else{
-    //     $consultar = "SELECT * FROM juegos WHERE nombre LIKE '$nombre%' ORDER BY nombre";
-    // }
-    // Seleccionamos la Base de Datos
-    
-    
 
     $registros = mysqli_query($conexion, $consultar);?>
-
 
     <h3 class="d-flex justify-content-center">Mostrando resultados</h3>
 

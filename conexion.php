@@ -1,5 +1,5 @@
 <?php
-// En tu archivo conexion.php
+//archivo conexion
 global $servidor, $usuario, $password, $basedatos;
 
 $servidor = "bdq4jbeczeuvey4mum0o-mysql.services.clever-cloud.com";

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- Header para las paginas de admin -->
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />

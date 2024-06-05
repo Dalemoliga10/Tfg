@@ -6,7 +6,7 @@ include ("headerDashboard.php");
 
 //var_dump($_POST);
 
-//almacena lo que hay en el array asociativo
+//recoge lo introducido
 $contra = $_POST["contrasena"];
 $correo = $_POST["correo"];
 
@@ -16,7 +16,7 @@ $seleccionar = "SELECT * from usuarios where correo='$correo'";
 $registros = mysqli_query($conexion, $seleccionar);
 
 while ($registro = mysqli_fetch_row($registros)){
-    //COn esto reviso que la contraseña aportada sea la misma que la hasheada,
+    //Con esto reviso que la contraseña aportada sea la misma que la hasheada,
     if (password_verify($contra, $registro[5])) {
         
         session_start();

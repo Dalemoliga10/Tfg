@@ -1,6 +1,7 @@
 <?php
 include "headerRewrite.php";
 $_SESSION["juego"] = $_GET["juego"];
+//Formulario comentar
 ?>
 
 <div class="container my-5">

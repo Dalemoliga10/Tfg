@@ -1,5 +1,5 @@
 <?php
-
+//header para los que usa mod rewrite, tiene ya la conexion lista
 require_once('conexion.php');
 
 $consultar = "SELECT nombre FROM etiquetas";
@@ -78,7 +78,6 @@ $contador = 0;
     <link rel="shortcut icon" href="../imagenes/icono.ico">    
     <form action="../listado.php" id="miniform" name="miniform" method="get">
         <div class="container-fluid d-flex align-items-center" style="height: 100px;">
-            <!-- Hay que poner la imagen para que no moleste al form -->
             <a href="../index.php" style="width:7%;"><img src="../imagenes/logo gameDex.png" style="width:100%;margin-left:20px;"></a>
             <div class="container" style="width: 60%;">
                 <div class="d-flex align-items-center justify-content-center">
@@ -124,6 +123,7 @@ $contador = 0;
         </div>
     </form>
     <script>
+        //Funcion js para mostrar las etiquetas
         function toggleClass(elem, className) {
             if (elem.className.indexOf(className) !== -1) {
                 elem.className = elem.className.replace(className, '');

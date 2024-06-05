@@ -1,7 +1,7 @@
 <?php
+//Header para la mayoria de paginas que ve el usuario
 
 require_once('conexion.php');
-
 
 $consultar = "SELECT nombre FROM etiquetas";
 
@@ -125,6 +125,7 @@ $contador = 0;
         </div>
     </form>
     <script>
+        //Funcion js para el menu desplegable de etiquetas
         function toggleClass(elem, className) {
             if (elem.className.indexOf(className) !== -1) {
                 elem.className = elem.className.replace(className, '');

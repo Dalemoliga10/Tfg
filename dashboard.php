@@ -28,6 +28,7 @@ include "headerDashboard.php" ?>
 </style>
 
 <?php
+//Dashboard que te muestra las opciones dependiendo de si eres admin o usuario
 if ($_SESSION["rol"] == "admin") { ?>
 
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
