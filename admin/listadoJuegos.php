@@ -48,12 +48,20 @@ if (session_status()) {
             print "<td>$registro[9]</td>";
             print "<td>$registro[10]</td>";
             print "<td>$registro[11]</td>";
-            print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../CRUD/eliminar.php?codigo=$registro[0]'>Eliminar</a></button>  ";
-                print "<button class='btn btn-primary btn-animado' style='background-color:green;'><a style='color:black;text-decoration:none;' href='../CRUD/alta.php?'>Añadir</a></button>";
-                //Al acceder al enlace podemos sacar el id del usuario facilmente
-                print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/modificar.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
+            print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../CRUD/eliminar.php?codigo=$registro[0]'>Eliminar</a></button>  ";                
+            print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/modificar.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
         }
         print "</table>";
+        ?>
+        <div class="container d-flex flex-column align-items-center">
+            <h1>Otras opciones</h1>
+            <div>
+                <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/alta.php?codigo=$registro[0]'>Crear juego</a></button>
+                <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href="crearEtiqueta.php">Crear etiqueta</a></button>
+            </div>
+        </div>
+        
+        <?php
         print "<a href='../dashboard.php' style='text-align:center;'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;''></i></a>";
     } else {
         echo "No tienes permisos para acceder aqui";

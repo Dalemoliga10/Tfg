@@ -12,7 +12,6 @@ $registros = mysqli_query($conexion, $busqueda);
 
 while ($registro = mysqli_fetch_row($registros)) {
 ?>
-
     <head>
         <meta name="description" content=<?php echo $registro[2] ?>>
         <link rel="shortcut icon" href="imagenes/icono.ico">
