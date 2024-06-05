@@ -14,9 +14,8 @@ while ($registro = mysqli_fetch_row($registros)) {
 ?>
 
     <head>
+        <meta name="description" content=<?php echo $registro[2] ?>>
         <link rel="shortcut icon" href="imagenes/icono.ico">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo "Detalle de " . $registro[1] ?></title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

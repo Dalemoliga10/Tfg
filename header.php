@@ -16,7 +16,7 @@ $contador = 0;
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <meta name="author" content="Dalemoliga">
     <link rel="icon" type="image/x-icon" href="imagenes/icono_gameDex.png">
 
     <!-- Bootstrap CSS v5.2.1 -->
