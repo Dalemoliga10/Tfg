@@ -1,4 +1,5 @@
 <?php
+//formulario de creacion de juego, trae los datos de la sugerencia
 include_once("../conexion.php");
 include "../headerDashboard.php";
 $seleccion = "SELECT * FROM sugerencias_juegos WHERE id_sugerencia = $_GET[codigo]";

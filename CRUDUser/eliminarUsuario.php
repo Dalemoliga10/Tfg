@@ -1,6 +1,6 @@
 <?php
 include "../headerDashboard.php";
-
+//Confimacion para eliminar usuario
 
 if (session_status()){
     session_start();

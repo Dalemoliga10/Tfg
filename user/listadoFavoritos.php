@@ -16,6 +16,7 @@
 <body>
     <h1 class="d-flex justify-content-center">Tus juegos favoritos</h1>
     <?php
+    //Igual que el listado,solo que coge los favoritos del usuario
     session_start();
     include "../headerDashboard.php";
     require_once("../conexion.php");

@@ -1,6 +1,6 @@
 <?php
 include "../headerDashboard.php";
-
+//Eliminando usuario, con seguridad, haciendo que tengas que ser admin para que se ejecute esto
 
 if (session_status()){
     session_start();

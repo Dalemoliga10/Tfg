@@ -1,6 +1,6 @@
 <?php
 include "../headerDashboard.php";
-
+//Formulario para sugerir un juego
 
 if (session_status()) {
     session_start();?>

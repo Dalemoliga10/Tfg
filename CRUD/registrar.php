@@ -1,11 +1,7 @@
 <?php include "../conexion.php" ?>
 
 <?php
-//RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
-
-//var_dump($_POST);
-
-//almacena lo que hay en el array asociativo
+//Resgistra un juego, es el proceso
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
 $descripcionCorta = $_POST["descripcionCorta"];
@@ -13,11 +9,10 @@ $etiqueta1 = $_POST["etiqueta1"];
 $etiqueta2 = $_POST["etiqueta2"];
 $etiqueta3 = $_POST["etiqueta3"];
 $pagOficial = $_POST["pagOficial"];
+
 //Mostrará nombre,tipo,ubicación, errores, tamaño; ddel archivo
 //var_dump($_FILES['imagen'])
-
-//Habrá que crearlo anteriormente
-//Si falla algo probablemente sera esto
+//Parte imagenes, comprueba una a una la extension, la resiza y luegologuarda en variable
 $directorioSubida = "../imagenes/";
 $max_file_size = "5120000";
 $extensionesValidas = array("jpg", "jpeg", "webp");
@@ -216,7 +211,7 @@ if (isset($_FILES['imagen3'])) {
     imagedestroy($nueva_imagen);
     imagedestroy($imagen_orig);
 }
-
+//Inserta
 $insertar = "INSERT juegos (nombre,descripcion,descripcion_corta, foto1, foto2, foto3,paginaOficial, etiqueta1,etiqueta2,etiqueta3) VALUES ('$nombre','$descripcion', '$descripcionCorta', '$nombreArchivo', '$nombreArchivo2', '$nombreArchivo3', '$pagOficial', '$etiqueta1', '$etiqueta2','$etiqueta3')";
 mysqli_query($conexion, $insertar);
 

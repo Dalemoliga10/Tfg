@@ -1,7 +1,7 @@
 <?php
 include "../headerDashboard.php";
 
-
+//formulario de modificacion
 if (session_status()) {
     session_start();
     if ($_SESSION["rol"] == "admin") {

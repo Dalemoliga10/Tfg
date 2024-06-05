@@ -3,6 +3,7 @@ include ("../headerDashboard.php");
 ?>
 
 <?php
+//Guarda la sugerencia
 session_start();
 
 $nombre = $_POST["nombre"];

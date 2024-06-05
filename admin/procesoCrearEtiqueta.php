@@ -1,12 +1,9 @@
 <?php include "../conexion.php" ?>
 
 <?php
-//var_dump($_POST);
+//Crear etiqueta proceso
 
-//almacena lo que hay en el array asociativo
 $nombreEtiqueta = $_POST["etiqueta"];
-
-
 
 $seleccionar = "SELECT * from etiquetas";
 $registros = mysqli_query($conexion, $seleccionar);

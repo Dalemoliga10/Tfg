@@ -1,6 +1,6 @@
 <?php
 include "../headerDashboard.php";
-
+//Proceso de eliminacion de un juego
 
 if (session_status()){
     session_start();

@@ -1,11 +1,7 @@
 <?php include "../conexion.php" ?>
 
 <?php
-//RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
-
-//var_dump($_POST);
-
-//almacena lo que hay en el array asociativo
+//Proceso registrar admin
 $nombre = $_POST["nombre"];
 $apellidos = $_POST["apellidos"];
 $rol = "admin";

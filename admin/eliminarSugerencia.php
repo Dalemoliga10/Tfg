@@ -1,4 +1,5 @@
 <?php
+//Proceso eliminacion sugerencia
 include "../headerDashboard.php";
 
 

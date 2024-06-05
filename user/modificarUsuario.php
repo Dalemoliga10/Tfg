@@ -1,6 +1,7 @@
 <?php
 include "../headerDashboard.php";
     session_start();
+    //formulario modificacion usuario
 ?>
         <?php
         $idModificar = $_SESSION["id"];

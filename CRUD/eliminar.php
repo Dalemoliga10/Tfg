@@ -1,6 +1,6 @@
 <?php
 include "../headerDashboard.php";
-
+//Proceso seguro de eliminacion
 
 if (session_status()){
     session_start();

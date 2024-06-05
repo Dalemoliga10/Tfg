@@ -1,7 +1,7 @@
 <?php include "../conexion.php" ?>
 
 <?php
-
+//Proceso para modificar
 $nombre = $_POST["nombre"];
 $apellidos = $_POST["apellidos"];
 $id = $_POST["id"];

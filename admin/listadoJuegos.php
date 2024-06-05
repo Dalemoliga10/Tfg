@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="listados.css">
 <?php
+//Listado de juegos
 include "../headerDashboard.php";
 
 if (session_status()) {

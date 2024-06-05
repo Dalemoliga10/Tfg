@@ -1,7 +1,7 @@
 <?php
 include "../headerDashboard.php";
 
-
+//Creacion de juego
 if (session_status()) {
     session_start();
     if ($_SESSION["rol"] == "admin") { //SOlo accesible si eres admin?>

@@ -1,11 +1,8 @@
 <?php include "../conexion.php" ?>
 
 <?php
-//RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
+//Proceso añadir link, difeenciando entre pc, movil y consola
 
-//var_dump($_POST);
-
-//almacena lo que hay en el array asociativo
 $juego = $_POST["juego"];
 $plataforma = $_POST["plataforma"];
 $link = $_POST["link"];

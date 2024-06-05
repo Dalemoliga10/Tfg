@@ -1,11 +1,10 @@
 <?php include "../conexion.php";?>
 
 <?php
-//RECORDAR QUE LA IMAGEN SI ES MAS PEQUEÑA QUE LO INDICADO SALE MAL EN EL DETALLE
+//Proceso de modificacion
 
 var_dump($_POST);
 
-//almacena lo que hay en el array asociativo
 $idModificar = $_POST["id"];
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
@@ -14,6 +13,7 @@ $etiqueta1 = $_POST["etiqueta1"];
 $etiqueta2 = $_POST["etiqueta2"];
 $etiqueta3 = $_POST["etiqueta3"];
 $pagOficial = $_POST["pagOficial"];
+
 //Mostrará nombre,tipo,ubicación, errores, tamaño; ddel archivo
 //var_dump($_FILES['imagen'])
 if ($_POST['imagenes']== "true") {
@@ -220,6 +220,7 @@ if ($_POST['imagenes']== "true") {
     }
 }
 
+//Depende de si sehan subido imagenes nuevas o no, modifica con imagenes o sin ellas
 if ($_POST['imagenes'] == "true") {
     $modificar = "UPDATE juegos SET nombre = '$nombre', descripcion = '$descripcion', descripcion_corta = '$descripcionCorta', foto1 = '$nombreArchivo', foto2 = '$nombreArchivo2', foto3 = '$nombreArchivo3', paginaOficial = '$pagOficial', etiqueta1 = '$etiqueta1', etiqueta2 = '$etiqueta2', etiqueta3 = '$etiqueta3' WHERE id = '$idModificar'";
     mysqli_query($conexion, $modificar);

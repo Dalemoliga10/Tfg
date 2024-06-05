@@ -2,6 +2,7 @@
 include "../headerDashboard.php";
 if (session_status()) {
     session_start();
+    //Formulario para añadir un nuevo link a un juego, se trae el juego
     if ($_SESSION["rol"] == "admin") {
 ?>
         <style>

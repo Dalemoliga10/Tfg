@@ -1,5 +1,6 @@
 
 <?php
+//Listado de usuarios
 include "../headerDashboard.php";?>
 <style>
     .btn-animado {

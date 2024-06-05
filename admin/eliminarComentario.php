@@ -1,4 +1,5 @@
 <?php
+//Proceso eliminar comentario
 if (session_status()) {
     session_start();
     if ($_SESSION["id"] == $_GET["user"] or $_SESSION["rol"] == "admin") {

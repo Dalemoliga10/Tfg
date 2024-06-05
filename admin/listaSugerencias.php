@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="listados.css">
 <?php
 include "../headerDashboard.php";
-
+//Listado de las sugerencias
 if (session_status()) {
     session_start();
     if ($_SESSION["rol"] == "admin") {

@@ -1,5 +1,6 @@
 <?php
 include "../headerDashboard.php";
+//Formulario creacion admin
 ?>
 <style>
     form{

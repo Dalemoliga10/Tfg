@@ -1,4 +1,5 @@
 <?php
+//Formulario creacion etiqueta
 include "../headerDashboard.php";
 ?>
 <body >
