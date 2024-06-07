@@ -62,7 +62,7 @@
 
     $registros = mysqli_query($conexion, $consultar);?>
 
-    <h3 class="d-flex justify-content-center">Mostrando resultados</h3>
+    <h3 class="d-flex justify-content-center" style="margin: 20px 0px;">Mostrando resultados</h3>
 
     <div class="container-fluid d-flex flex-column mb-4" style="width: 75%;">
         <?php while ($registro = mysqli_fetch_row($registros)) { ?>
