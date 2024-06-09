@@ -12,14 +12,20 @@ if (session_status()){
         $registros = mysqli_query($conexion, $consultar);
 
         //Codigo
-        while ($registro = mysqli_fetch_row($registros)) {
-            print("¿Seguro que quieres eliminar el usuario . $registro[1] ?");
-        
+        while ($registro = mysqli_fetch_row($registros)) {?>
+            <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="text-center">
+                <h1>¿Seguro que quieres eliminar el usuario <?php echo $registro[1] ?>?</h1>
+                <button class='btn btn-primary btn-animado' style='background-color:red;'>
+                    <a style='color:black;text-decoration:none;' href='procesoEliminacion.php?codigo=<?php echo $idElimina ?>'>Eliminar</a>
+                </button>            
+                <button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'>
+                    <a style='color:black;text-decoration:none;' href='../admin/listadoUsuarios.php'>Volver</a>
+                </button>
+            </div>
+        </div>
+        <?php
         }
-        print "<a href='procesoEliminacion.php?codigo=$idElimina'>Eliminar</a>";
-        print "<a href='../admin/listadoUsuarios?'>Volver</a>";
-
-
 
     }else{
         echo "No tienes permisos para acceder aqui";

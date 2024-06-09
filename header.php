@@ -93,13 +93,13 @@ $contador = 0;
                 if (@$_SESSION) {
                 ?>
                     <p style="margin-bottom: -5px;">Sesion iniciada como :<br> <?php echo $_SESSION['rol'] . "  " . $_SESSION['nombre'] ?></p>
-                    <div><a href="dashboard.php">Ir al dashboard</a> <a href="cierreSesion.php">Cerrar sesion</a></div>
+                    <div><a href="dashboard.php" style="text-decoration: none;color: #FFD700;">Ir al dashboard</a> <a href="cierreSesion.php" style="text-decoration: none;color: #FFD700;">Cerrar sesion</a></div>
 
                 <?php
                 } else {
                 ?>
                     <div><p> No has iniciado sesion</p>
-                        <a href="formInicioSesion.php">Iniciar sesion</a>
+                        <a href="formInicioSesion.php" style="text-decoration: none;color: #FFD700;">Iniciar sesion</a>
                     </div>
                 <?php
                 }

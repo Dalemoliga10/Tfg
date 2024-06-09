@@ -7,6 +7,12 @@ if (session_status()) {
     if ($_SESSION["rol"] == "admin") {
         //Codigo
 ?>
+        <style>
+            form {
+                background-color: #3E5F8A;
+                color: #FFD700;
+            }
+        </style>
         <script>
             //JS que permite ver si se han subido 3 imagenes o ninguna
             function validarImagenes() {
@@ -39,12 +45,12 @@ if (session_status()) {
         <?php
 
         include_once('../conexion.php');
-                $idModificar = $_GET["codigo"];
+        $idModificar = $_GET["codigo"];
         $consultar = "SELECT * FROM juegos WHERE id = $idModificar";
 
         $registros = mysqli_query($conexion, $consultar);
         while ($registro = mysqli_fetch_row($registros)) { ?>
-            <div class="row mt-3 justify-content-md-center">
+            <div class="d-flex justify-content-md-center text-center">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">

@@ -36,7 +36,7 @@ include "header.php";
                                 <input type="pass" class="form-control" name="contrasena" id="contrasena" placeholder="Introduce contraseña" required />
                             </div>
                             <div class="d-grid">
-                                <input type="submit" class="btn btn-primary" value="Crear Juego">
+                                <input type="submit" class="btn btn-primary" value="Crear Usuario">
                             </div>
                         </form>
                     </div>

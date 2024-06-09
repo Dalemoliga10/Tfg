@@ -70,17 +70,25 @@ if (session_status()) {
             print "<td>$registro[4]</td>";
             print "<td>$registro[5]</td>";
             if ($registro[4] != $_SESSION["correo"]){
-                print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a></button>  ";
-                print "<button class='btn btn-primary btn-animado' style='background-color:green;'><a style='color:black;text-decoration:none;' href='/CRUDUser/añadirUsuario.php?'>Añadir</a></button>";
+                print "<td><button class='btn btn-primary btn-animado' style='background-color:red;margin-left:35px;'><a style='color:black;text-decoration:none;' href='../CRUDUser/eliminarUsuario.php?codigo=$registro[0]'>Eliminar</a></button>  ";
                 //Al acceder al enlace podemos sacar el id del usuario facilmente
-                print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
+                print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:15px;'><a style='color:black;text-decoration:none;' href='../CRUDUser/modificarUsuario.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
             }else{
                 print "<td style='text-align:center;'>Eres tu</td></tr>";
             }
             
+            
         }
         
         print "</table>";
+        ?>
+        <div class="container d-flex flex-column align-items-center">
+            <h1>Otras opciones</h1>
+            <div>
+                <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../altaUsuario.php?'>Crear usuario</a></button>
+            </div>
+        </div>
+        <?php
         print "<a href='../dashboard.php' style='text-align:center;'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;''></i></a>";
 
     } else {

@@ -8,8 +8,13 @@ $registros = mysqli_query($conexion, $seleccion);
 if (session_status()) {
     session_start();
     if ($_SESSION["rol"] == "admin") { //Solo accesible si eres admin
-        while ($registro = mysqli_fetch_row($registros)) { echo $registro[1];?>
-
+        while ($registro = mysqli_fetch_row($registros)) { ?>
+<style>
+    form{
+        background-color: #3E5F8A;
+        color: #FFD700;
+    }
+</style>
         <div class="container my-5">
             <div class="row">
                 <div class="col text-center">
