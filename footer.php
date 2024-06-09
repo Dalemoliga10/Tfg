@@ -36,9 +36,9 @@
                 Sitio Web diseñado por Daniel Alejandro
             </div>
             <div class="col-6 py-3 d-inline">
-                <i class="bi-envelope py-3"></i>
+                <i class="bi-building py-3"></i>
                 <br />
-                ejemplo@ejemplo.com
+                IES Playamar
             </div>
             <a href="https://github.com/Dalemoliga10" class="col-6 py-3 d-inline text-white" style="text-decoration: none;" target="_blank">
                 <div>
