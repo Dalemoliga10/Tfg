@@ -46,7 +46,7 @@ if (session_status()) {
                                         <input type="text" class="form-control" name="link" id="link" placeholder="Introduce link" required />
                                     </div>
                                     <div class="d-grid">
-                                        <input type="submit" class="btn btn-primary" value="Crear Juego">
+                                        <input type="submit" class="btn btn-primary" value="Crear Enlace">
                                     </div>
                                 </form>
                             </div>

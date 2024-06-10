@@ -13,7 +13,7 @@ $registros = mysqli_query($conexion, $busqueda);
 while ($registro = mysqli_fetch_row($registros)) {
 ?>
     <head>
-        <meta name="description" content=<?php echo $registro[2] ?>>
+        <meta name="description" content=<?php $registro[2] ?>>
         <link rel="shortcut icon" href="imagenes/icono.ico">
         <title><?php echo "Detalle de " . $registro[1] ?></title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -81,11 +81,11 @@ while ($registro = mysqli_fetch_row($registros)) {
                         </ol>
 
                         <div class="carousel-inner" role="listbox">
-                            <div class="item" class="carousel-content">
+                            <div class="item active" class="carousel-content">
                                 <?php echo '<img src="../imagenes/' . $registro[5] . '">'; ?>
                             </div>
 
-                            <div class="item active" class="carousel-content">
+                            <div class="item" class="carousel-content">
                                 <?php echo '<img src="../imagenes/' . $registro[6] . '">'; ?>
                             </div>
 

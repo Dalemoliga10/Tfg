@@ -4,7 +4,14 @@ include "../headerDashboard.php";
 //Creacion de juego
 if (session_status()) {
     session_start();
-    if ($_SESSION["rol"] == "admin") { //SOlo accesible si eres admin?>
+    if ($_SESSION["rol"] == "admin") { //SOlo accesible si eres admin
+?>
+        <style>
+            form {
+                background-color: #3E5F8A;
+                color: #FFD700;
+            }
+        </style>
         <div class="container my-5">
             <div class="row">
                 <div class="col text-center">
@@ -47,15 +54,15 @@ if (session_status()) {
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace PC</label>
-                                        <input type="text" class="form-control" name="enlacePC" id="enlacePC"/>
+                                        <input type="text" class="form-control" name="enlacePC" id="enlacePC" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace movil</label>
-                                        <input type="text" class="form-control" name="enlaceMovil" id="enlaceMovil"/>
+                                        <input type="text" class="form-control" name="enlaceMovil" id="enlaceMovil" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Enlace consola</label>
-                                        <input type="text" class="form-control" name="enlaceConsola" id="enlaceConsola"/>
+                                        <input type="text" class="form-control" name="enlaceConsola" id="enlaceConsola" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="pagOficial" class="form-label">Pagina Oficial</label>

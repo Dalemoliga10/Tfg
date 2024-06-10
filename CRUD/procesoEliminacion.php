@@ -33,7 +33,7 @@ if (session_status()){
         $eliminado = mysqli_query($conexion, $eliminar);
 
         if ($eliminado){
-            header("Location:../dashboard.php");
+            header("Location:../admin/listadoJuegos.php");
         }else{
             echo "Error";
         }
