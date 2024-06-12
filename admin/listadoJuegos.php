@@ -24,15 +24,14 @@ if (session_status()) {
 
         $registros = mysqli_query($conexion, $consultar);
         $cambiado = "";
-
         print "<table style=text-align:center;>";
-        print "<tr><th style='width: 10%;'>nombre</th>";
-        print "<th style='width: 30%;'>descripcion</th>";
-        print "<th>descripcion_corta</th>";
+        print "<tr><th style='width:5%;'>nombre</th>";
+        print "<th style='width: 35%;'>Descripcion Completa</th>";
+        print "<th style='width: 25%;'>descripcion_corta</th>";
         print "<th>foto1</th>";
         print "<th>foto2</th>";
         print "<th>foto3</th>";
-        print "<th>Página oficial</th>";
+        print "<th style='width: 50px;'>Página oficial</th>";
         print "<th>etq1</th>";
         print "<th>etq2</th>";
         print "<th>etq3</th>";
@@ -45,7 +44,14 @@ if (session_status()) {
             print "<td><a href='/proyectoFinal/imagenes/{$registro[5]}' target='_blank'>Ver imagen</a></td>";
             print "<td><a href='/proyectoFinal/imagenes/{$registro[6]}' target='_blank'>Ver imagen</a></td>";
             print "<td><a href='/proyectoFinal/imagenes/{$registro[7]}' target='_blank'>Ver imagen</a></td>";            
-            print "<td>$registro[8]</td>";
+            print "<td>"; //Control de si tiene pagina oficial o no
+            if($registro[8] != ''){
+                print "<a href='$registro[8]' target=_blank>Ver página</a>";
+            }else{
+                print"No pag";
+            }
+           
+            print "</td>";
             print "<td>$registro[9]</td>";
             print "<td>$registro[10]</td>";
             print "<td>$registro[11]</td>";
@@ -53,6 +59,7 @@ if (session_status()) {
             print "<button class='btn btn-primary btn-animado' style='background-color:yellow;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/modificar.php?codigo=$registro[0]'>Modificar</a></button></td></tr>";
         }
         print "</table>";
+        print "</div>";
         ?>
         <div class="container d-flex flex-column align-items-center">
             <h1>Otras opciones</h1>
