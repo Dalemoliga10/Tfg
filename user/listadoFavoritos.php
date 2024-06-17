@@ -3,14 +3,19 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Listado de juegos</title>
+    <title>Listado de Favoritos</title>
 </head>
 <style>
-    .card:hover {
-        background-color: blue;
-        transition: background-color 0.5s;
-        /*transicion*/
-    }
+.card {
+    transition: background-color 0.5s ease;
+    /* transición */
+}
+.card:hover {
+    color: #3E5F8A;
+    transition: border 0.5s ;
+    transition: color 0.5s ;
+    background-color: #CFB53B;
+}
 </style>
 
 <body>
@@ -37,8 +42,8 @@
     ?>
 
         <?php while ($registro = mysqli_fetch_row($registros)) {
-            echo "<div class='container-fluid d-flex flex-column mb-4' style='width: 75%;'>";
             echo "<a href='../detalle.php?idJuego=$registro[0]' style='text-decoration:none;'>";
+            echo "<div class='container-fluid d-flex flex-column mb-4' style='width: 75%;'>";
         ?>
             
                 <!-- Ya he sacado los datos basados en el nombre, ahora filtro por etiqueta -->
@@ -86,11 +91,16 @@
                         }
 
                         ?>
+                        <!-- Eliminar el juego favorito -->
+                        <a href="../user/eliminarFavorito.php?juego=<?php echo $registro[0]; ?>" style="color:red;">
+                            <i class="bi bi-trash" style="font-size: 5.25rem;"></i>
+                        </a>
+
                     </div>
                 </div>
             </div>
     <?php
-            echo "</a>";
+        echo "</a>";
         }
     } ?>
         <a href="../dashboard.php" style="text-align: center;"><i class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>

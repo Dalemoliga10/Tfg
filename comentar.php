@@ -38,7 +38,7 @@ $_SESSION["juego"] = $_GET["juego"];
                         </form>
                     </div>
                 </div>
-                <a href="index.php"><i class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>
+                <a href="../detalle.php?idJuego=<?php echo $_SESSION["juego"]?>.php"><i class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>
             </div>
         </div>
     </div>

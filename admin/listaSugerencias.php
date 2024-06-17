@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="listados.css">
 <?php
 include "../headerDashboard.php";
 //Listado de las sugerencias
