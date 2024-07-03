@@ -21,6 +21,7 @@ while ($registro = mysqli_fetch_row($registros)) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <style>
+
         /*Carrousel*/ 
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {
@@ -196,7 +197,7 @@ while ($registro = mysqli_fetch_row($registros)) {
                 <?php if (empty($registro[8])) {
                     print("Pagina oficial no existente");
                 } else {  ?>
-                    <a href="<?php echo $registro[8] ?>" target="_blank" style="margin-right: 3%;">Pagina oficial</a>
+                    <a href="<?php echo $registro[8] ?>" target="_blank" style="margin-right: 0%;">Pagina oficial</a>
                 <?php } ?>
             </div>
         </div>
@@ -244,9 +245,10 @@ while ($registro = mysqli_fetch_row($registros)) {
 
         ?>
     </div>
-    </body>
     <?php
     include("footer.php");
     ?>
+    </body>
+  
 
     </html>

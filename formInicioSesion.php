@@ -25,7 +25,7 @@ include "header.php";
                             </div>
                             <div class="mb-3">
                                 <label for="apellidos" class="form-label">Contraseña</label>
-                                <input type="pass" class="form-control" name="contrasena" id="contrasena" placeholder="Introduce contraseña" required />
+                                <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Introduce contraseña" required />
                             </div>
                             <div class="d-grid">
                                 <input type="submit" class="btn btn-primary" value="Iniciar sesion">

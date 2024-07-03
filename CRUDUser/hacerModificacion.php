@@ -8,5 +8,5 @@ $id = $_POST["id"];
 
 $modificar = "UPDATE usuarios SET nombre = '$nombre', apellidos = '$apellidos' WHERE id_usuario = '$id'";
 mysqli_query($conexion, $modificar);
-header("Location:../admin/listadoUsuarios");
+header("Location:../admin/listadoUsuarios.php");
 ?>

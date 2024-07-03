@@ -87,7 +87,7 @@ if (session_status()) {
                             </div>
                         </div>
                         <!--otro icono curioso de back: bi bi-backspace -->
-                        <a href="../formInicioSesion.php" class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>
+                        <a href="../admin/listadoJuegos.php" class="bi-arrow-return-left px-3" style="font-size:4rem; color:black;"></i></a>
                     </div>
                 </div>
             </div>

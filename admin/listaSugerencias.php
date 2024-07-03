@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="listados.css">
 <?php
 include "../headerDashboard.php";
 //Listado de las sugerencias
@@ -36,10 +35,26 @@ if (session_status()) {
         while ($registro = mysqli_fetch_row($registros)) {
             print "<tr><td>$registro[1]</td>";
             print "<td>$registro[2]</td>";
-            print "<td>$registro[3]</td>";
-            print "<td>$registro[4]</td>";
-            print "<td>$registro[5]</td>";
-            print "<td>$registro[6]</td>";
+            if ($registro[3] != ''){
+                print "<td><a href=$registro[3] target=_blank>ver pagina</td>";
+            }else{
+                print "<td>no enlace</td>";
+            }
+            if ($registro[4] != ''){
+                print "<td><a href=$registro[4] target=_blank>ver pagina</td>";
+            }else{
+                print "<td>no enlace</td>";
+            }
+            if ($registro[5] != ''){
+                print "<td><a href=$registro[5] target=_blank>ver pagina</td>";
+            }else{
+                print "<td>no enlace</td>";
+            }
+            if ($registro[6] != ''){
+                print "<td><a href=$registro[6] target=_blank>ver pagina</td>";
+            }else{
+                print "<td>no enlace</td>";
+            }
             print "<td><button class='btn btn-primary btn-animado' style='background-color:red;'><a style='color:black;text-decoration:none;' href='../admin/eliminarSugerencia.php?codigo=$registro[0]'>Eliminar</a></button>  ";
                 print "<button class='btn btn-primary btn-animado' style='background-color:green;'><a style='color:black;text-decoration:none;' href='../CRUD/altaSugerencia.php?codigo=$registro[0]'>Añadir</a></button></td></tr>";
                 //Al acceder al enlace podemos sacar el id del usuario facilmente

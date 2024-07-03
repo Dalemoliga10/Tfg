@@ -31,7 +31,7 @@ include "../headerDashboard.php";
                                     <input type="pass" class="form-control" name="etiqueta" id="etiqueta" placeholder="Introduce etiqueta" required />
                                 </div>
                                 <div class="d-grid">
-                                    <input type="submit" class="btn btn-primary" value="Iniciar sesion">
+                                    <input type="submit" class="btn btn-primary" value="Crear etiqueta">
                                 </div>
                             </form>
                         </div>

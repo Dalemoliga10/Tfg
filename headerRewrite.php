@@ -96,7 +96,7 @@ $contador = 0;
                 <?php
                 } else {
                 ?>
-                    <div><p> No has iniciado sesion</p>
+                    <div><p>No has iniciado sesion</p>
                         <a href="../formInicioSesion.php">Iniciar sesion</a>
                     </div>
                 <?php

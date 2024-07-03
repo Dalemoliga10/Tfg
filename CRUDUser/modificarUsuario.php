@@ -18,7 +18,7 @@ if (session_status()) {
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            Modificar:
+                            Modificar usuario:
                         </div>
                         <form class="p-4" method="POST" action="hacerModificacion.php" enctype="multipart/form-data" id="FORMULARIO">
                             <div class="mb-3">
@@ -43,6 +43,7 @@ if (session_status()) {
                     </div>
                 </div>
             </div>
+            <a href='../admin/listadoUsuarios.php' style='text-align:center;'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>
 
 <?php
         }

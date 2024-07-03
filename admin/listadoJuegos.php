@@ -64,7 +64,7 @@ if (session_status()) {
         <div class="container d-flex flex-column align-items-center">
             <h1>Otras opciones</h1>
             <div>
-                <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/alta.php?codigo=$registro[0]'>Crear juego</a></button>
+                <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href='../CRUD/alta.php'>Crear juego</a></button>
                 <button class='btn btn-primary btn-animado' style='background-color:green;margin-left:5px;'><a style='color:black;text-decoration:none;' href="crearEtiqueta.php">Crear etiqueta</a></button>
             </div>
         </div>

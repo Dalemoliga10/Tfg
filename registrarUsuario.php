@@ -1,6 +1,8 @@
 <?php include "conexion.php" ?>
 
 <?php
+include ("header.php");
+
 //Recoge datos el formulario
 $nombre = $_POST["nombre"];
 $apellidos = $_POST["apellidos"];
@@ -27,8 +29,10 @@ if ($correoUsado == False){
     header("Location:index.php");
 }else{
     //Si ya hay un correo asi, avisa de que esta
-    echo "Correo ya usado<br>";
-    echo "<a href='formInicioSesion.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a>";
+    echo "<div style=text-align:center;>";
+    echo "Correo ya usado<br>";?>
+    <a href='altaUsuario.php'><i class='bi-arrow-return-left px-3' style='font-size:4rem; color:black;'></i></a></div>
+    <?php
 }
 
 
